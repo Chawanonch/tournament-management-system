@@ -1,0 +1,14 @@
+D:\NewCs67\10-06-2567\10-06-2567\bin\Debug\net7.0\10-06-2567.exe
+D:\NewCs67\10-06-2567\10-06-2567\bin\Debug\net7.0\10-06-2567.deps.json
+D:\NewCs67\10-06-2567\10-06-2567\bin\Debug\net7.0\10-06-2567.runtimeconfig.json
+D:\NewCs67\10-06-2567\10-06-2567\bin\Debug\net7.0\10-06-2567.dll
+D:\NewCs67\10-06-2567\10-06-2567\bin\Debug\net7.0\10-06-2567.pdb
+D:\NewCs67\10-06-2567\10-06-2567\obj\Debug\net7.0\10-06-2567.GeneratedMSBuildEditorConfig.editorconfig
+D:\NewCs67\10-06-2567\10-06-2567\obj\Debug\net7.0\10-06-2567.AssemblyInfoInputs.cache
+D:\NewCs67\10-06-2567\10-06-2567\obj\Debug\net7.0\10-06-2567.AssemblyInfo.cs
+D:\NewCs67\10-06-2567\10-06-2567\obj\Debug\net7.0\10-06-2567.csproj.CoreCompileInputs.cache
+D:\NewCs67\10-06-2567\10-06-2567\obj\Debug\net7.0\10-06-2567.dll
+D:\NewCs67\10-06-2567\10-06-2567\obj\Debug\net7.0\refint\10-06-2567.dll
+D:\NewCs67\10-06-2567\10-06-2567\obj\Debug\net7.0\10-06-2567.pdb
+D:\NewCs67\10-06-2567\10-06-2567\obj\Debug\net7.0\10-06-2567.genruntimeconfig.cache
+D:\NewCs67\10-06-2567\10-06-2567\obj\Debug\net7.0\ref\10-06-2567.dll

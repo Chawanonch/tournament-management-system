@@ -1,0 +1,692 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\NewCs67\\ApiRovTournament\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\controllers\\registrationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\controllers\\registrationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\controllers\\matchscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\controllers\\matchscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\services\\teamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\services\\teamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\services\\registrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\services\\registrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\services\\matchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\services\\matchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\controllers\\teamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\controllers\\teamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\services\\iservices\\imatchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\services\\iservices\\imatchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\controllers\\levelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\controllers\\levelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\controllers\\tournamentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\controllers\\tournamentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\services\\iservices\\iregistrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\services\\iservices\\iregistrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\controllers\\fallbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\controllers\\fallbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\services\\tournamentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\services\\tournamentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\data\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\data\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\models\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\models\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\models\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\models\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\models\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\models\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\dtos\\registrationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\dtos\\registrationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\dtos\\tournamentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\dtos\\tournamentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\dtos\\teamrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\dtos\\teamrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\models\\tournament.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\models\\tournament.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\services\\authenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\services\\authenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\controllers\\authencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\controllers\\authencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\services\\iservices\\itournamentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\services\\iservices\\itournamentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\services\\iservices\\iauthenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\services\\iservices\\iauthenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\services\\levelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\services\\levelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\dtos\\randommatchdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\dtos\\randommatchdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\models\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\models\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\models\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\models\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\dtos\\updatematchdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\dtos\\updatematchdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\services\\iservices\\ilevelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\services\\iservices\\ilevelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\services\\iservices\\iteamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\services\\iservices\\iteamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\dtos\\levelrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\dtos\\levelrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|d:\\newcs67\\apirovtournament\\apirovtournament\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AF214130-0D28-49A2-97B5-1BCAD75376D5}|ApiRovTournament\\ApiRovTournament.csproj|solutionrelative:apirovtournament\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 237,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "ApiRovTournament\\wwwroot\\index.html",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\index.html",
+              "RelativeToolTip": "ApiRovTournament\\wwwroot\\index.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-08-21T07:34:35.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegistrationsController.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\RegistrationsController.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Controllers\\RegistrationsController.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\RegistrationsController.cs",
+              "RelativeToolTip": "ApiRovTournament\\Controllers\\RegistrationsController.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAowC4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T06:47:04.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MatchsController.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\MatchsController.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Controllers\\MatchsController.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\MatchsController.cs",
+              "RelativeToolTip": "ApiRovTournament\\Controllers\\MatchsController.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAgwDYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T14:14:27.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MatchService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\MatchService.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Services\\MatchService.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\MatchService.cs",
+              "RelativeToolTip": "ApiRovTournament\\Services\\MatchService.cs",
+              "ViewState": "AQIAAKUAAAAAAAAAAADwvyAAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T14:38:14.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegistrationService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\RegistrationService.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Services\\RegistrationService.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\RegistrationService.cs",
+              "RelativeToolTip": "ApiRovTournament\\Services\\RegistrationService.cs",
+              "ViewState": "AQIAALIAAAAAAAAAAAAswMQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T14:01:29.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TeamService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\TeamService.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Services\\TeamService.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\TeamService.cs",
+              "RelativeToolTip": "ApiRovTournament\\Services\\TeamService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T02:15:35.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TeamsController.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\TeamsController.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Controllers\\TeamsController.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\TeamsController.cs",
+              "RelativeToolTip": "ApiRovTournament\\Controllers\\TeamsController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T02:30:36.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IMatchService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\IServices\\IMatchService.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Services\\IServices\\IMatchService.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\IServices\\IMatchService.cs",
+              "RelativeToolTip": "ApiRovTournament\\Services\\IServices\\IMatchService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T14:38:10.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LevelsController.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\LevelsController.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Controllers\\LevelsController.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\LevelsController.cs",
+              "RelativeToolTip": "ApiRovTournament\\Controllers\\LevelsController.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAwCYAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T15:32:03.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TournamentsController.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\TournamentsController.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Controllers\\TournamentsController.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\TournamentsController.cs",
+              "RelativeToolTip": "ApiRovTournament\\Controllers\\TournamentsController.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAgwCsAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:05:20.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IRegistrationService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\IServices\\IRegistrationService.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Services\\IServices\\IRegistrationService.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\IServices\\IRegistrationService.cs",
+              "RelativeToolTip": "ApiRovTournament\\Services\\IServices\\IRegistrationService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T14:01:13.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FallbackController.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\FallbackController.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Controllers\\FallbackController.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\FallbackController.cs",
+              "RelativeToolTip": "ApiRovTournament\\Controllers\\FallbackController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T03:32:41.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Context.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Data\\Context.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Data\\Context.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Data\\Context.cs",
+              "RelativeToolTip": "ApiRovTournament\\Data\\Context.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAnwBQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T10:15:31.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TournamentService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\TournamentService.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Services\\TournamentService.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\TournamentService.cs",
+              "RelativeToolTip": "ApiRovTournament\\Services\\TournamentService.cs",
+              "ViewState": "AQIAAFoAAAAAAAAAAADgv2oAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:02:23.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Match.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Match.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Models\\Match.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Match.cs",
+              "RelativeToolTip": "ApiRovTournament\\Models\\Match.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAiwAkAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T09:57:13.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Registration.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Registration.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Models\\Registration.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Registration.cs",
+              "RelativeToolTip": "ApiRovTournament\\Models\\Registration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T09:49:20.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Level.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Level.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Models\\Level.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Level.cs",
+              "RelativeToolTip": "ApiRovTournament\\Models\\Level.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:36:07.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Program.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Program.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Program.cs",
+              "RelativeToolTip": "ApiRovTournament\\Program.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAvwE8AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:06:57.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RegistrationRequest.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\RegistrationRequest.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Dtos\\RegistrationRequest.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\RegistrationRequest.cs",
+              "RelativeToolTip": "ApiRovTournament\\Dtos\\RegistrationRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T13:55:03.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TeamRequest.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\TeamRequest.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Dtos\\TeamRequest.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\TeamRequest.cs",
+              "RelativeToolTip": "ApiRovTournament\\Dtos\\TeamRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBMAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T02:16:22.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TournamentRequest.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\TournamentRequest.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Dtos\\TournamentRequest.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\TournamentRequest.cs",
+              "RelativeToolTip": "ApiRovTournament\\Dtos\\TournamentRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T09:47:01.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Tournament.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Tournament.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Models\\Tournament.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Tournament.cs",
+              "RelativeToolTip": "ApiRovTournament\\Models\\Tournament.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T09:56:09.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AuthenService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\AuthenService.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Services\\AuthenService.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\AuthenService.cs",
+              "RelativeToolTip": "ApiRovTournament\\Services\\AuthenService.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAMwD0AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:50:04.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AuthenController.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\AuthenController.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Controllers\\AuthenController.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Controllers\\AuthenController.cs",
+              "RelativeToolTip": "ApiRovTournament\\Controllers\\AuthenController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAgwDYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:49:38.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ITournamentService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\IServices\\ITournamentService.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Services\\IServices\\ITournamentService.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\IServices\\ITournamentService.cs",
+              "RelativeToolTip": "ApiRovTournament\\Services\\IServices\\ITournamentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:04:41.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Dtos\\RegisterDto.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\RegisterDto.cs",
+              "RelativeToolTip": "ApiRovTournament\\Dtos\\RegisterDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:56:22.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "IAuthenService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\IServices\\IAuthenService.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Services\\IServices\\IAuthenService.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\IServices\\IAuthenService.cs",
+              "RelativeToolTip": "ApiRovTournament\\Services\\IServices\\IAuthenService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:49:57.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "LevelService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\LevelService.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Services\\LevelService.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\LevelService.cs",
+              "RelativeToolTip": "ApiRovTournament\\Services\\LevelService.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAADgvxcAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T15:28:47.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "RandomMatchDto.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\RandomMatchDto.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Dtos\\RandomMatchDto.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\RandomMatchDto.cs",
+              "RelativeToolTip": "ApiRovTournament\\Dtos\\RandomMatchDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T18:29:07.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Role.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Role.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Models\\Role.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Role.cs",
+              "RelativeToolTip": "ApiRovTournament\\Models\\Role.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T10:15:21.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Status.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Status.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Models\\Status.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Status.cs",
+              "RelativeToolTip": "ApiRovTournament\\Models\\Status.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T15:10:56.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Team.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Team.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Models\\Team.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\Team.cs",
+              "RelativeToolTip": "ApiRovTournament\\Models\\Team.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAgAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T09:50:06.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\User.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Models\\User.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Models\\User.cs",
+              "RelativeToolTip": "ApiRovTournament\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T10:16:14.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "UpdateMatchDto.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\UpdateMatchDto.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Dtos\\UpdateMatchDto.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\UpdateMatchDto.cs",
+              "RelativeToolTip": "ApiRovTournament\\Dtos\\UpdateMatchDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T18:29:14.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\LoginDto.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Dtos\\LoginDto.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\LoginDto.cs",
+              "RelativeToolTip": "ApiRovTournament\\Dtos\\LoginDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:56:34.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ILevelService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\IServices\\ILevelService.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Services\\IServices\\ILevelService.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\IServices\\ILevelService.cs",
+              "RelativeToolTip": "ApiRovTournament\\Services\\IServices\\ILevelService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T15:29:00.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ITeamService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\IServices\\ITeamService.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Services\\IServices\\ITeamService.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Services\\IServices\\ITeamService.cs",
+              "RelativeToolTip": "ApiRovTournament\\Services\\IServices\\ITeamService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T02:15:27.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "AutoMapperProfile.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\AutoMapperProfile.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\AutoMapperProfile.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\AutoMapperProfile.cs",
+              "RelativeToolTip": "ApiRovTournament\\AutoMapperProfile.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAIBJwBsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:47:09.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "LevelRequest.cs",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\LevelRequest.cs",
+              "RelativeDocumentMoniker": "ApiRovTournament\\Dtos\\LevelRequest.cs",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\Dtos\\LevelRequest.cs",
+              "RelativeToolTip": "ApiRovTournament\\Dtos\\LevelRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T15:29:29.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\appsettings.json",
+              "RelativeDocumentMoniker": "ApiRovTournament\\appsettings.json",
+              "ToolTip": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\appsettings.json",
+              "RelativeToolTip": "ApiRovTournament\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-18T10:47:10.3Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="home/cs64/s09/tournament-rov" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\obj\\Release\\net7\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>
