@@ -142,7 +142,6 @@ export const userSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
-        console.log(action.payload)
         if (action.payload != null || action.payload != undefined) {
           const token = String(action.payload);
           state.token = token;

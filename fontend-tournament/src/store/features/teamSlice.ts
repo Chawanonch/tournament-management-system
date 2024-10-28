@@ -52,9 +52,13 @@ export const createAndUpdateTeam  = createAsyncThunk<Team, FieldValues>(
       const Team = await agent.Teams.creatAndUpdateTeam({
         Id : data.id,
         SchoolName : data.schoolName,
-        ListMembers : data.listMembers.map((member:any) => ({
+        ListMembers : data.listMembers && data.listMembers.map((member:any) => ({
           Name: member.name,
           Position: member.position
+        })),
+        ListTrainers : data.listTrainers && data.listTrainers.map((trainer:any) => ({
+          Name: trainer.name,
+          Position: trainer.position
         })),
         LevelId : data.levelId
       });

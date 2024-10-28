@@ -17,7 +17,8 @@ namespace ApiRovTournament.Data
             base.OnConfiguring(optionsBuilder);
             //optionsBuilder.UseSqlServer(_config.GetConnectionString("DatabaseConnect"));
             //optionsBuilder.UseSqlServer("Server=DESKTOP-DTGB06O\\SQLEXPRESS; Database=ApiTournament; Trusted_Connection=True; TrustServerCertificate=True");
-            optionsBuilder.UseSqlServer("Server=10.103.0.16,1433; Database=TournamentRovDb; Trusted_connection=false; TrustServerCertificate=true; User Id=student; Password=Cs@2700; Encrypt=false;");
+            //optionsBuilder.UseSqlServer("Server=10.103.0.16,1433; Database=TournamentRovDb; Trusted_connection=false; TrustServerCertificate=true; User Id=student; Password=Cs@2700; Encrypt=false;");
+            optionsBuilder.UseSqlServer("Server=10.103.0.15,1433; Database=tournamentrov; Trusted_connection=false; TrustServerCertificate=true; User Id=studentrov; Password=Stu@2600; Encrypt=false;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -71,6 +72,20 @@ namespace ApiRovTournament.Data
         public DbSet<Team> Teams { get; set; }
         public DbSet<ListLevel> ListLevels { get; set; }
         public DbSet<ListMember> ListMembers { get; set; }
+        public DbSet<ListTrainer> ListTrainers { get; set; }
+        public DbSet<TextInImage> TextInImages { get; set; }
+        public DbSet<Certificate> Certificates { get; set; }
+        public DbSet<ListPrize> Prizes { get; set; }
+        public DbSet<Competition> Competitions { get; set; }
+        public DbSet<CompetitionList> CompetitionLists { get; set; }
+        public DbSet<ListNameCompetitionDetails> ListNameCompetitionDetails { get; set; }
+        public DbSet<Compete> Competes { get; set; }
+        public DbSet<RegistrationCompete> RegistrationCompetes { get; set; }
+        public DbSet<AllDetail> AllDetails { get; set; }
+        public DbSet<ListLevelCompete> ListLevelCompetes { get; set; }
+        public DbSet<SignerDetail> SignerDetails { get; set; }
+        public DbSet<ListSignerDetail> ListSignerDetails { get; set; }
+
 
     }
 }

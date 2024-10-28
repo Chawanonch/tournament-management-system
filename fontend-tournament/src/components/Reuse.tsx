@@ -50,7 +50,7 @@ export const convertToGregorianYear = (dateString:any) => {
 export function formatDate(dateString: string) {
   const date = new Date(dateString);
   // ลบปี พ.ศ. 543 (ปรับเป็นปี ค.ศ.)
-  const adjustedYear = date.getFullYear() - 543;
+  const adjustedYear = date.getFullYear();
   // สร้างวัตถุ Date ใหม่โดยใช้ปีที่ปรับแล้ว
   const adjustedDate = new Date(date.setFullYear(adjustedYear));
   const options: any = { year: 'numeric', month: 'long', day: 'numeric' };

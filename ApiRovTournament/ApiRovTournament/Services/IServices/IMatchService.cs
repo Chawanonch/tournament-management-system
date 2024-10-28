@@ -11,5 +11,6 @@ namespace ApiRovTournament.Services.IServices
         Task<string> UpdateMatchResult(UpdateMatchDto dto);
         Task<object> RemoveMatch(int id);
         Task<object> ResetTeamsAndDeleteMatches(int id);
+        Task<object> ResetMatchesForRound(ResetMatchForRoundDto dto);
     }
 }

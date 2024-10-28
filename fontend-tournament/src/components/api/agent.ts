@@ -2,7 +2,8 @@ import axios, { AxiosResponse } from "axios";
 import { store } from "../../store/store";
 
 // export const baseUrl = "https://localhost:7093/";
-export const baseUrlServer = "/cs64/s09/tournament-rov/";
+// export const baseUrlServer = "/cs64/s09/tournament-rov/";
+export const baseUrlServer = "/rov/";
 
 axios.defaults.baseURL = baseUrlServer;
 
@@ -40,9 +41,17 @@ const requests = {
 
 function createFormData(item: any, images?: Array<string | File>) {
   const formData = new FormData();
-  for (const key in item) {
-    formData.append(key, item[key]);
-  }
+
+  Object.keys(item).forEach((key) => {
+    if (item[key] !== undefined && item[key] !== null) {
+      if (Array.isArray(item[key])) {
+        formData.append(key, JSON.stringify(item[key]));
+      } else {
+        formData.append(key, item[key]);
+      }
+    }
+  });
+  
   if (images) {
     images.forEach((image) => {
       formData.append("images", image);
@@ -82,6 +91,8 @@ const Matchs = {
     requests.delete(`api/Matchs/RemoveMatch?id=${id}`),
   resetTeamsAndDeleteMatches: (id: number) =>
     requests.get(`api/Matchs/ResetTeamsAndDeleteMatches?id=${id}`),
+  resetMatchesForRound: (values:object) =>
+    requests.post("api/Matchs/ResetMatchesForRound", values),
 };
 
 const Registrations = {
@@ -96,6 +107,18 @@ const Registrations = {
     requests.get(`api/Registrations/CancelCheckInAllRegistrations?id=${id}`),
   removeRegistration: (id: number) =>
     requests.delete(`api/Registrations/RemoveRegistration?id=${id}`),
+
+  getRegistrationCompetes: () => requests.get("api/Registrations/GetRegistrationCompetes"),
+  registrationCompetes: (values: object) =>
+    requests.post("api/Registrations/RegistrationCompete", values),
+  checkInRegistrationCompete: (id: number) =>
+    requests.get(`api/Registrations/CheckInRegistrationCompetes?id=${id}`),
+  checkInAllRegistrationCompetes: (id: number) =>
+    requests.get(`api/Registrations/CheckInAllRegistrationCompetes?id=${id}`),
+  cancelCheckInAllRegistrationCompetes: (id: number) =>
+    requests.get(`api/Registrations/CancelCheckInAllRegistrationCompetes?id=${id}`),
+  removeRegistrationCompete: (id: number) =>
+    requests.delete(`api/Registrations/RemoveRegistrationCompete?id=${id}`),
 };
 
 const Teams = {
@@ -108,12 +131,72 @@ const Teams = {
 
 const Tournaments = {
   getTournaments: () => requests.get("api/Tournaments/GetTournament"),
-  creatAndUpdateTournament: (values: object) =>
-    requests.post("api/Tournaments/CAUTournament", values),
+  creatAndUpdateTournament: (values: any) =>
+    requests.postForm("api/Tournaments/CAUTournament", createFormData(values)),
   statusHideTournament: (id: number) =>
     requests.get(`api/Tournaments/StatusHideTournament?id=${id}`),
+  statusHideTournaments: (year: number) =>
+    requests.get(`api/Tournaments/StatusHideTournaments?year=${year}`),
   removeTournament: (id: number) =>
     requests.delete(`api/Tournaments/RemoveTournament?id=${id}`),
+};
+
+const Certificates = {
+  getCertificates: () => requests.get("api/Certificates/GetCertificate"),
+  creatAndUpdateCertificateOne: (values: object) =>
+    requests.post("api/Certificates/CAUCertificateONE", values),
+  creatAndUpdateCertificate: (values: object) =>
+    requests.post("api/Certificates/CAUCertificate", values),
+  removeCertificate: (id: number) =>
+    requests.delete(`api/Certificates/RemoveCertificate?id=${id}`),
+};
+
+const Competitions = {
+  getCompetitions: () => requests.get("api/Competitions/GetCompetition"),
+  creatAndUpdateCompetition: (values: object) =>
+    requests.postForm("api/Competitions/CAUCompetition", createFormData(values)),
+  removeCompetition: (id: number) =>
+    requests.delete(`api/Competitions/RemoveCompetition?id=${id}`),
+
+  getCompetitionsList: () => requests.get("api/Competitions/GetCompetitionList"),
+  creatAndUpdateCompetitionList: (values: object) =>
+    requests.post("api/Competitions/CAUCompetitionList", values),
+  removeCompetitionList: (id: number) =>
+    requests.delete(`api/Competitions/RemoveCompetitionList?id=${id}`),
+};
+
+const AllDetail = {
+  getAllDetails: () => requests.get("api/AllDetails/GetAllDetail"),
+  creatAndUpdateAllDetail: (values: object) =>
+    requests.postForm("api/AllDetails/CAUAllDetail", createFormData(values)),
+  removeAllDetail: (id: number) =>
+    requests.delete(`api/AllDetails/RemoveAllDetail?id=${id}`),
+};
+const Competes = {
+  getCompetes: () => requests.get("api/Competes/GetCompete"),
+  creatAndUpdateCompete: (values: any) =>
+    requests.post("api/Competes/CAUCompete", values),
+  statusHideCompete: (id: number) =>
+    requests.get(`api/Competes/StatusHideCompete?id=${id}`),
+  statusHideCompetes: (year: number) =>
+    requests.get(`api/Competes/StatusHideCompetes?year=${year}`),
+  removeCompete: (id: number) =>
+    requests.delete(`api/Competes/RemoveCompete?id=${id}`),
+};
+
+const SignerDetails = {
+  getSignerDetails: () => requests.get("api/SignerDetails/GetSignerDetail"),
+  creatAndUpdateSignerDetail: (values: object) =>
+    requests.postForm("api/SignerDetails/CAUSignerDetail", createFormData(values)),
+  removeSignerDetail: (id: number) =>
+    requests.delete(`api/SignerDetails/RemoveSignerDetail?id=${id}`),
+};
+const TextInImages = {
+  getTextInImages: () => requests.get("api/TextInImages/GetTextInImage"),
+  creatAndUpdateTextInImage: (values: object) =>
+    requests.postForm("api/TextInImages/CAUTextInImage", createFormData(values)),
+  removeTextInImage: (id: number) =>
+    requests.delete(`api/TextInImages/RemoveTextInImageid=${id}`),
 };
 
 const agent = {
@@ -123,6 +206,12 @@ const agent = {
   Registrations,
   Teams,
   Tournaments,
+  Certificates,
+  Competitions,
+  AllDetail,
+  Competes,
+  SignerDetails,
+  TextInImages
 };
 
 export default agent;

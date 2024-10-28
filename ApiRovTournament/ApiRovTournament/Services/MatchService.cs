@@ -105,8 +105,8 @@ namespace ApiRovTournament.Services
             {
                 var match = new Match
                 {
-                    Team1Id = teamsToConsider[i].Id,
-                    Team2Id = teamsToConsider[i + 1].Id,
+                    Team1Id = teamsToConsider[i].TeamId,
+                    Team2Id = teamsToConsider[i + 1].TeamId,
                     MatchDate = DateTime.Now,
                     Round = checkRound ? 1 : maxRoundForTournament + 1, // ใช้ round ของ Tournament นี้
                     TournamentId = dto.tournamentId // ระบุ TournamentId ในแมตช์
@@ -132,22 +132,30 @@ namespace ApiRovTournament.Services
             if (match.Team1Id != dto.winningTeamId && match.Team2Id != dto.winningTeamId)
                 return "Invalid winning team";
 
+            var team1 = await _context.Registrations
+                .FirstOrDefaultAsync(r => r.TeamId == match.Team1Id);
+            if(team1 == null) return null;
+
+            var team2 = await _context.Registrations
+                .FirstOrDefaultAsync(r => r.TeamId == match.Team2Id);
+            if (team2 == null) return null;
+
             if (match.Team1Id == dto.winningTeamId)
             {
-                match.Team1.Status = StatusTeamInTournament.Winning;
-                match.Team2.Status = StatusTeamInTournament.Losing;
+                team1.Status = StatusTeamInTournament.Winning;
+                team2.Status = StatusTeamInTournament.Losing;
             }
             else
             {
-                match.Team1.Status = StatusTeamInTournament.Losing;
-                match.Team2.Status = StatusTeamInTournament.Winning;
+                team1.Status = StatusTeamInTournament.Losing;
+                team2.Status = StatusTeamInTournament.Winning;
             }
 
             match.WinnerTeamId = dto.winningTeamId;
 
             _context.Matchs.Update(match);
-            _context.Registrations.Update(match.Team1);
-            _context.Registrations.Update(match.Team2);
+            _context.Registrations.Update(team1);
+            _context.Registrations.Update(team2);
             await _context.SaveChangesAsync();
 
             return "Match result updated and new matches created.";
@@ -193,5 +201,42 @@ namespace ApiRovTournament.Services
 
             return teamsToReset;
         }
+        public async Task<object> ResetMatchesForRound(ResetMatchForRoundDto dto)
+        {
+            // ขั้นตอนที่ 1: ค้นหาแมตช์ทั้งหมดในรอบที่กำหนด
+            var matchesReset = await _context.Matchs
+                .Where(r => r.TournamentId == dto.tournamentId && r.Round == dto.round)
+                .ToListAsync();
+
+            if (matchesReset.Count == 0) return "No matches to reset.";
+
+            // ขั้นตอนที่ 2: ดึงข้อมูลทีมที่เกี่ยวข้องทั้งหมด
+            var teamIds = matchesReset.SelectMany(m => new[] { m.Team1Id, m.Team2Id }).Distinct().ToList();
+
+            if (teamIds.Count == 0) return "No teams to reset.";
+
+            // ขั้นตอนที่ 3: ค้นหาข้อมูลการลงทะเบียนของทีมทั้งหมดที่เกี่ยวข้อง
+            var teamsToReset = await _context.Registrations
+                .Where(r => teamIds.Contains(r.TeamId))
+                .ToListAsync();
+
+            if (teamsToReset.Count == 0) return "No team registrations found.";
+
+            // ขั้นตอนที่ 4: อัปเดตสถานะของทีมทั้งหมดให้เป็น Winning
+            foreach (var team in teamsToReset)
+            {
+                team.Status = dto.round != 1 ? StatusTeamInTournament.Winning : StatusTeamInTournament.Active;  // หรือสถานะที่คุณต้องการ
+                team.DateRegistration = DateTime.Now;
+                team.DateRegistration = team.DateRegistration.Date.AddYears(543);
+            }
+
+            _context.Registrations.UpdateRange(teamsToReset);
+            _context.Matchs.RemoveRange(matchesReset);
+
+            await _context.SaveChangesAsync();
+
+            return matchesReset;
+        }
+
     }
 }

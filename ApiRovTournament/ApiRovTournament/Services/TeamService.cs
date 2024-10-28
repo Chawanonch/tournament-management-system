@@ -24,7 +24,7 @@ namespace ApiRovTournament.Services
         }
         public async Task<List<Team>> GetTeams()
         {
-            return await _context.Teams.Include(x => x.ListMembers).OrderBy(x=>x.SchoolName).ToListAsync();
+            return await _context.Teams.Include(x => x.ListMembers).Include(x => x.ListTrainers).OrderBy(x=>x.SchoolName).ToListAsync();
         }
         public async Task<List<Team>> GetTeamByUser()
         {
@@ -33,6 +33,7 @@ namespace ApiRovTournament.Services
 
             return await _context.Teams
                 .Include(x => x.ListMembers)
+                .Include(x => x.ListTrainers)
                 .Where(x => x.User.Email == email)
                 .OrderByDescending(x => x.Id)
                 .ToListAsync();
@@ -70,6 +71,7 @@ namespace ApiRovTournament.Services
             var result = _mapper.Map<Team>(request);
 
             result.ListMembers.Clear();
+            result.ListTrainers.Clear();
 
             var numLevel = await _levelService.GetByIdLevel(request.LevelId);
             if (numLevel == null) return "Level not found!";
@@ -110,6 +112,34 @@ namespace ApiRovTournament.Services
                 await _context.SaveChangesAsync();
             }
 
+            if (request?.ListTrainers != null && request?.ListTrainers.Count() > 0)
+            {
+                var lTrainer = await _context.ListTrainers.Where(x => x.TeamId == result.Id).ToListAsync();
+                if (lTrainer.Any())
+                {
+                    _context.ListTrainers.RemoveRange(lTrainer);
+                    await _context.SaveChangesAsync();
+                }
+
+                var listTrainer = new List<ListTrainer>();
+
+                foreach (var trainerDTO in request.ListTrainers)
+                {
+                    var newListTrainer = new ListTrainer
+                    {
+                        Name = trainerDTO.Name,
+                        Position = trainerDTO.Position,
+                        TeamId = result.Id
+                    };
+
+                    listTrainer.Add(newListTrainer);
+                }
+
+                result.ListTrainers = listTrainer;
+                _context.Teams.Update(result);
+                await _context.ListTrainers.AddRangeAsync(listTrainer);
+                await _context.SaveChangesAsync();
+            }
             return result;
         }
 

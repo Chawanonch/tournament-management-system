@@ -1,4 +1,4 @@
-import { Button, Container, Input, Stack, Typography } from "@mui/joy";
+import { Button, Container, Input, Stack } from "@mui/joy";
 import { useEffect, useState } from "react";
 import { useAppDispatch } from "../store/store";
 import { getByUser, getUserAdmin, loginUser } from "../store/features/userSlice";
@@ -21,17 +21,17 @@ export default function LoginPage() {
 
     fetchData();
   }, [dispatch]);
-  
+
   const handleLogin = async () => {
     if (!emailOrUsername || !password) {
-      alert.alertCustom(3,"กรุณาป้อนข้อมูลให้ครบ!")
+      alert.alertCustom(3, "กรุณาป้อนข้อมูลให้ครบ!")
       return;
     }
-    
+
     const item = await dispatch(loginUser({ emailOrUsername, password }))
 
     if (item.payload !== "" && item.payload !== undefined) {
-      alert.alertCustom(1,"กำลังเข้าสู่ระบบ!")
+      alert.alertCustom(1, "กำลังเข้าสู่ระบบ!")
 
       setTimeout(async () => {
         await dispatch(getByUser());
@@ -40,10 +40,10 @@ export default function LoginPage() {
       }, 900);
     }
     else {
-      alert.alertCustom(2,"ป้อนข้อมูลผิดพลาด!")
+      alert.alertCustom(2, "ป้อนข้อมูลผิดพลาด!")
     }
   };
-  
+
   return (
     <Container
       sx={{
@@ -61,9 +61,9 @@ export default function LoginPage() {
           borderRadius: "md",
         }}
       >
-        <Typography level="h1" component="h1" sx={{ textAlign: "center" }}>
+        <h1 style={{ textAlign: "center" }}>
           เข้าสู่ระบบ
-        </Typography>
+        </h1>
 
         <Input
           type="email"
@@ -79,14 +79,17 @@ export default function LoginPage() {
         />
 
         <Button variant="solid" color="primary" fullWidth onClick={handleLogin}>
-          ล็อคอิน
+          <h4>
+            ล็อคอิน
+          </h4>
         </Button>
 
-        <h4
-        >
+        <h4>
           ยังไม่มีบัญชี?{" "}
           <Button onClick={navigate.navigateToRegister} variant="outlined">
-            สมัครสมาชิก
+            <h4>
+              สมัครสมาชิก
+            </h4>
           </Button>
         </h4>
       </Stack>

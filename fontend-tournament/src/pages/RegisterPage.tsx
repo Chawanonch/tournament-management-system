@@ -1,10 +1,10 @@
-import { Button, Container, Input, Stack, Typography } from "@mui/joy";
+import { Button, Container, Input, Stack } from "@mui/joy";
 import { useEffect, useState } from "react";
 import Alert2 from "../components/Alert2";
 import NavigateCustom from "../components/NavigateCustom";
 import { useAppDispatch, useAppSelector } from "../store/store";
 import { isValidEmail } from "../components/Reuse";
-import { registerUser } from "../store/features/userSlice";
+import { getUserAdmin, registerUser } from "../store/features/userSlice";
 
 export default function RegisterPage() {
   const { users } = useAppSelector((state) => state.user);
@@ -18,37 +18,45 @@ export default function RegisterPage() {
   const alert = Alert2()
 
   useEffect(() => {
+    const fetchData = async () => {
+      await dispatch(getUserAdmin());
+    };
+
+    fetchData();
+  }, [dispatch]);
+
+  useEffect(() => {
     if (users && users.length > 0) {
       const isAdmin = users.filter((user: any) => user.roleId === 1);
       setRoleId(isAdmin.length > 0 ? 2 : 1);
     }
   }, [users]);
-  
+
   const funRegister = async () => {
     if (!username) {
-      alert.alertCustom(3,"กรุณาป้อนชื่อผู้ใช้!")
+      alert.alertCustom(3, "กรุณาป้อนชื่อผู้ใช้!")
       return;
     }
-    
+
     if (!isValidEmail(email)) {
-      alert.alertCustom(3,"กรุณาป้อนรูปแบบอีเมลให้ถูกต้อง !")
+      alert.alertCustom(3, "กรุณาป้อนรูปแบบอีเมลให้ถูกต้อง !")
       return;
     }
 
     if (password.length < 6) {
-      alert.alertCustom(3,"กรุณาป้อนรหัสไม่ต่ำกว่า 6 ตัว !")
+      alert.alertCustom(3, "กรุณาป้อนรหัสไม่ต่ำกว่า 6 ตัว !")
       return;
     }
 
     const item = await dispatch(registerUser({ username, email, password, roleId }))
-    
+
     if (item.payload !== "" && item.payload !== undefined && item.payload !== null) {
-      alert.alertCustom(1,"สร้างบัญชีผู้ใช้สำเร็จ !")
+      alert.alertCustom(1, "สร้างบัญชีผู้ใช้สำเร็จ !")
       setTimeout(() => {
         navigate.navigateToLogin();
       }, 900);
     }
-    else alert.alertCustom(2,"กรุณาลองใหม่!")
+    else alert.alertCustom(2, "กรุณาลองใหม่!")
   }
 
   return (
@@ -68,9 +76,9 @@ export default function RegisterPage() {
           borderRadius: "md",
         }}
       >
-        <Typography level="h1" component="h1" sx={{ textAlign: "center" }}>
+        <h1 style={{ textAlign: "center" }}>
           สมัครสมาชิก
-        </Typography>
+        </h1>
 
         <Input
           type="text"
@@ -92,11 +100,11 @@ export default function RegisterPage() {
         />
 
         <Button variant="solid" color="primary" fullWidth onClick={funRegister}>
-          สมัครสมาชิก
+          <h4>สมัครสมาชิก</h4>
         </Button>
 
         <Button onClick={navigate.navigateToLogin} variant="outlined">
-          กลับ
+          <h4>กลับ</h4>
         </Button>
       </Stack>
     </Container>

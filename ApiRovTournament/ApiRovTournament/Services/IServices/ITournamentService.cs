@@ -9,6 +9,7 @@ namespace ApiRovTournament.Services.IServices
         Task<Tournament> GetByIdTournament(int? id);
         Task<object> CAUTournament(TournamentRequest request);
         Task<object> StatusHideTournament(int id);
+        Task<object> StatusHideTournaments(int year);
         Task<object> RemoveTournament(int id);
     }
 }

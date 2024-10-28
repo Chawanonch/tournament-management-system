@@ -95,6 +95,10 @@
             "Swashbuckle.AspNetCore.Filters": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[8.0.8, )"
             }
           },
           "imports": [

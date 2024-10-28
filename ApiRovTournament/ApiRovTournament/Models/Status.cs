@@ -7,4 +7,12 @@
         Winning,
         Losing
     }
+
+    public enum StatusTeamInCompete
+    {
+        Pedding,
+        Active,
+        Winning,
+        Losing
+    }
 }

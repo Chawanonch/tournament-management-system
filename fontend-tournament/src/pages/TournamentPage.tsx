@@ -1,15 +1,15 @@
-import { Container, Box, Card, AspectRatio, CardContent, Sheet, Button,  FormControl, Select, Option, Input, IconButton, Modal, ModalClose, ModalDialog, Chip } from '@mui/joy';
+import { Container, Box, Card, AspectRatio, CardContent, Button, FormControl, Select, Option, Input, IconButton, Modal, ModalClose, ModalDialog, Chip } from '@mui/joy';
 import { useAppDispatch, useAppSelector } from '../store/store';
 import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import { Pagination } from '@mui/material';
+import { Grid, Pagination } from '@mui/material';
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
 import { createAndUpdateRegistration, getRegistration } from '../store/features/registrationSlice';
 import Alert2 from '../components/Alert2';
-import { convertToBuddhistYear, convertToGregorianYear, formatDate } from '../components/Reuse';
+import { convertToBuddhistYear, convertToGregorianYear, formatDate, formatNumberWithCommas, windowSizes } from '../components/Reuse';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import { createAndUpdateTournament, getTournament, removeTournament, statusHideTournament } from '../store/features/tournamentSlice';
+import { createAndUpdateTournament, getTournament, removeTournament, statusHideTournament, statusHideTournaments } from '../store/features/tournamentSlice';
 import Swal from 'sweetalert2';
 import EditIcon from '@mui/icons-material/Edit';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -17,6 +17,9 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import { getMatch, resetTeamsAndDeleteMatches } from '../store/features/matchSlice';
 import NavigateCustom from '../components/NavigateCustom';
+import { getTeams } from '../store/features/teamSlice';
+import { useDropzone } from 'react-dropzone';
+import { folderImage } from '../components/api/agent';
 
 export default function TournamentPage() {
   const { tournaments } = useAppSelector((state) => state.tournament);
@@ -36,9 +39,23 @@ export default function TournamentPage() {
   const [startDate, setStartDate] = useState<string>(new Date().toISOString().split('T')[0]);
   const [endDate, setEndDate] = useState<string>("");
   const [listLevels, setListLevels] = useState<any[]>([]);
+  const [prizesCount, setPrizesCount] = useState('');
+  const [prizes, setPrizes] = useState<any[]>([]);
+  const [image, setImage] = useState<string | File>("");
   const [id, setId] = useState<number>(0);
   const navigate = NavigateCustom()
+  const windowSize = windowSizes();
 
+  const [openHideOrNotHideModal, setOpenHideOrNotHideModal] = useState(false);
+  const [year, setYear] = useState<number>(0);
+  const [ date ] = useState(new Date());
+  const currentYear = date.getFullYear() + 543;
+  const maxYear = currentYear + 1;
+  const years = [];
+
+  for (let i = maxYear; i >= currentYear - 20; i--) {
+    years.push(i);
+  }
   const handleChange = (
     _event: React.SyntheticEvent | null,
     newValue: number | null,
@@ -65,10 +82,11 @@ export default function TournamentPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setCurrentPage(value);
   };
+
   const handleOpenModal = (id?: number) => {
     setOpenAddAndUpdateModal(true);
     if (id) {
-      const t = tournaments && tournaments.find(x => x.id === id);
+      const t = tournaments && tournaments.find(x => x.id === Number(id));
 
       if (t) {
         setId(id)
@@ -77,6 +95,20 @@ export default function TournamentPage() {
         setEndDate(t.endDate.toString().split('T')[0])
         if (listLevels) setListLevels(t.listLevels.map(x => x.levelId))
         else setListLevels([])
+        setPrizesCount(t.prizes.length > 0 ? String(t.prizes.length) : '');
+        setPrizes(t.prizes);
+        setImage(t.gameImageUrl)
+      } else {
+        setOpenAddAndUpdateModal(false);
+        setId(0)
+        setName("")
+        setStartDate("")
+        setEndDate("")
+        setListLevels([])
+        setImage("")
+        setPrizes([]);
+        setPrizesCount('')
+        setImage("")
       }
     }
   };
@@ -88,8 +120,36 @@ export default function TournamentPage() {
     setStartDate("")
     setEndDate("")
     setListLevels([])
+    setImage("")
+    setPrizes([]);
+    setPrizesCount('')
+  };
+  const handleOpenHideOrNotHideModal = () => {
+    setOpenHideOrNotHideModal(true);
   };
 
+  const handleCloseHideOrNotHideModal = () => {
+    setOpenHideOrNotHideModal(false);
+    setYear(0)
+  };
+  const hideTournamentByYear = async () => {
+    if (year === 0) {
+      alert.alertCustom(2, 'กรุณาป้อนข้อมูลให้ครบ');
+      return;
+    }
+    const item = await dispatch(statusHideTournaments(year));
+    if (item.payload !== "" && item.payload !== undefined) {
+      alert.alertCustom(1,"ซ่อน/ยกเลิกซ่อน รายการแข่งขันสำเร็จ");
+
+      setTimeout(async () => {
+        await dispatch(getTournament());
+      }, 900);
+
+      handleCloseHideOrNotHideModal();
+    } else {
+      alert.alertCustom(2, "ไม่มีรายการที่จะซ่อน");
+    }
+  };
   const regisTournament = async (tournamentId: number) => {
     const checkRole = user && user?.role === "Admin";
     const teamId = selectTeam;
@@ -118,7 +178,7 @@ export default function TournamentPage() {
     const tournament = tournaments && tournaments.find(t => t.id === tournamentId);
 
     const currentDateInBuddhistEra = new Date();
-    currentDateInBuddhistEra.setFullYear(currentDateInBuddhistEra.getFullYear() + 543);
+    currentDateInBuddhistEra.setFullYear(currentDateInBuddhistEra.getFullYear());
 
     if (tournament && currentDateInBuddhistEra <= new Date(tournament.endDate)) {
       const registrationData = checkRole ? { tournamentId, teamName } : { tournamentId, teamId };
@@ -128,11 +188,12 @@ export default function TournamentPage() {
         alert.alertCustom(1, "ลงทะเบียนทีมสำเร็จ!");
 
         setTimeout(async () => {
+          await dispatch(getTeams());
           await dispatch(getRegistration());
+          setAddTeam("")
+          setSelectTeam(0)
         }, 900);
 
-        setAddTeam("")
-        setSelectTeam(0)
       } else {
         alert.alertCustom(2, "เกิดข้อผิดพลาด!");
       }
@@ -140,14 +201,33 @@ export default function TournamentPage() {
       alert.alertCustom(2, "ไม่สามารถลงทะเบียนได้ เนื่องจากการแข่งขันสิ้นสุดแล้ว!");
     }
   }
+  const handleAddPrizes = () => {
+    const newPrizesCount = Number(prizesCount);
+    if (newPrizesCount > prizes.length) {
+      const newPrizes = Array.from({ length: newPrizesCount - prizes.length }, (_) => ({
+        price: '',
+        rank: ''
+      }));
+      setPrizes([...prizes, ...newPrizes]);
+    } else if (newPrizesCount < prizes.length) {
+      setPrizes(prizes.slice(0, newPrizesCount));
+    }
+  };
 
+  const handlePrizeChange = (index: number, field: 'price' | 'rank', value: string) => {
+    const updatedPrizes = [...prizes];
+    updatedPrizes[index] = {
+      ...updatedPrizes[index],
+      [field]: value
+    };
+    setPrizes(updatedPrizes);
+  };
   const cAUTournament = async () => {
     if (name.trim() === "" || startDate.trim() === "" || endDate.trim() === "" || listLevels.length === 0) {
       alert.alertCustom(2, 'กรุณาป้อนข้อมูลให้ครบ');
       return;
     }
-
-    const item = await dispatch(createAndUpdateTournament({ id, name, startDate, endDate, listLevels }));
+    const item = await dispatch(createAndUpdateTournament({ id, name, startDate, endDate, listLevels, prizes, image }));
     if (item.payload !== "" && item.payload !== undefined) {
       alert.alertCustom(1, id === 0 ? "สร้างทัวร์นาเมนต์สำเร็จ" : "แก้ไขทัวร์นาเมนต์สำเร็จ");
 
@@ -194,8 +274,10 @@ export default function TournamentPage() {
   };
 
   const hideTournamentById = async (id: number) => {
+    const t = tournaments && tournaments.find(x => x.id === Number(id));
+
     Swal.fire({
-      title: "คุณต้องการซ่อนใช่ไหม",
+      title: t && t.isHide === false ? "คุณต้องการซ่อนใช่ไหม" : "คุณต้องการยกเลิกซ่อนใช่ไหม",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -263,6 +345,17 @@ export default function TournamentPage() {
   ) => {
     setListLevels(newValue as number[]);
   };
+  const handleYearChange = (_:any, newValue: any) => {
+    setYear(newValue);
+  };
+  const getRootProp = useDropzone({
+    onDrop: (acceptedFiles) => {
+      if (acceptedFiles && acceptedFiles.length > 0) {
+        setImage(acceptedFiles[0]);
+      }
+    },
+    multiple: false,
+  });
 
   return (
     <Container>
@@ -273,72 +366,90 @@ export default function TournamentPage() {
           overflow: { xs: 'auto', sm: 'initial' },
         }}
       >
-        <div style={{ display: 'flex' }}>
-          <FormControl sx={{ maxWidth: 800, flex: 1 }}>
-            <h4>
-              ค้นหาชื่อทัวร์นาเมนต์
-            </h4>
-            <Input
-              placeholder="ค้นหา..."
-              startDecorator={
-                <Button sx={{ width: 35 }} variant="soft" color="neutral" disabled startDecorator={<SearchIcon />}>
-                </Button>
-              }
-              value={searchName}
-              onChange={(e) => setSearchName(e.target.value)}
-              sx={{ borderRadius: 8 }}
-            />
-          </FormControl>
-
-          <div style={{ marginLeft: 10 }}></div>
-
-          <FormControl sx={{ maxWidth: 200, flex: 1 }}>
-            <h4>ระดับของทัวร์นาเมนต์</h4>
-            <Select defaultValue={0} onChange={handleChange}>
-              <Option value={0}>
-                ทั้งหมด
-              </Option>
-              {levels.map((level) => (
-                <Option key={level.id} value={level.id}>
-                  {level.name}
-                </Option>
-              ))}
-            </Select>
-          </FormControl>
-
-          <div style={{ marginLeft: 10 }}></div>
-          {user && user?.role === "Admin" &&
-            <FormControl sx={{ maxWidth: 200, flex: 1 }}>
-              <h4 style={{ textAlign: "center" }}>สร้างทัวร์นาเมนต์</h4>
-
-              <IconButton onClick={() => handleOpenModal()}>
-                <AddCircleOutlineIcon color='success' />
-              </IconButton>
+        <Grid container spacing={2} alignItems="center">
+          <Grid item xs={12} md={7}>
+            <FormControl >
+              <h4>ค้นหาชื่อทัวร์นาเมนต์</h4>
+              <Input
+                placeholder="ค้นหา..."
+                startDecorator={
+                  <Button sx={{ width: 35 }} variant="soft" color="neutral" disabled startDecorator={<SearchIcon />} />
+                }
+                value={searchName}
+                onChange={(e) => setSearchName(e.target.value)}
+                sx={{ borderRadius: 8 }}
+              />
             </FormControl>
-          }
-        </div>
+          </Grid>
+
+          <Grid item xs={12} md={2.5}>
+            <FormControl >
+              <h4>ระดับของทัวร์นาเมนต์</h4>
+              <Select defaultValue={0} onChange={handleChange}>
+                <Option value={0}>ทั้งหมด</Option>
+                {levels.map((level) => (
+                  <Option key={level.id} value={level.id}>
+                    {level.name}
+                  </Option>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+
+          {user && user?.role === "Admin" && (
+            <Grid item xs={12} md={2.5}>
+              <FormControl >
+                <h4 style={{ textAlign: "center" }}>สร้างทัวร์นาเมนต์</h4>
+                <IconButton onClick={() => handleOpenModal()}>
+                  <AddCircleOutlineIcon color='success' />
+                </IconButton>
+              </FormControl>
+            </Grid>
+          )}
+           {user && user?.role === "Admin" && (
+            <Grid item xs={12} md={2.5}>
+              <FormControl >
+                <h4 style={{ textAlign: "center" }}>ซ่อน/ยกเลิกซ่อนการแข่งขันตามปี</h4>
+                <IconButton onClick={() => handleOpenHideOrNotHideModal()}>
+                  <VisibilityIcon color='success' />
+                  <div style={{ marginLeft: 5 }}></div>
+                  <VisibilityOffIcon color='warning' />
+                </IconButton>
+              </FormControl>
+            </Grid>
+          )}
+        </Grid>
         <div style={{ marginTop: 10 }}></div>
 
         {paginatedTournament && paginatedTournament.length > 0 && paginatedTournament.map((tournament: any) => {
-          const registrationsAll = registrations && Array.isArray(registrations) 
-            ? registrations.filter((reg) => reg.tournamentId === tournament.id) 
+          const registrationsAll = registrations && Array.isArray(registrations)
+            ? registrations.filter((reg) => reg.tournamentId === tournament.id)
             : [];
           const matchAll = matchs && Array.isArray(matchs)
             ? matchs.filter((match) =>
-                registrationsAll && registrationsAll.some((reg) => reg.teamId === match.team1Id || reg.teamId === match.team2Id)
-              )
+              registrationsAll && registrationsAll.some((reg) => reg.teamId === match.team1Id || reg.teamId === match.team2Id)
+            )
             : [];
           return (
             <Card
               key={tournament.id} // แนะนำให้มี id สำหรับแต่ละทัวร์นาเมนต์
               orientation="horizontal"
               sx={{
-                width: '100%',
                 mb: 2, // เพิ่ม margin ด้านล่างเพื่อแยกแต่ละการ์ด
               }}
             >
+              {windowSize > 720 &&
+                <AspectRatio flex ratio="1" maxHeight={182} sx={{ minWidth: 182 }}>
+                  <img
+                    src={tournament.gameImageUrl ? folderImage + tournament.gameImageUrl : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7yMx7Dj6gCVNPIoUszlAwdic0k0Vrk73-kw&s'}
+                    loading="lazy"
+                    alt={tournament.name}
+                  />
+                </AspectRatio>
+              }
+              <CardContent>
               {user && user?.role === "Admin" &&
-                <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "flex-end" }}>
                   <IconButton onClick={() => handleOpenModal(tournament.id)}>
                     <EditIcon color='warning' />
                   </IconButton>
@@ -360,75 +471,68 @@ export default function TournamentPage() {
                   </IconButton>
                 </Box>
               }
-
-              <AspectRatio flex ratio="1" maxHeight={182} sx={{ minWidth: 182 }}>
-                <img
-                  src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7yMx7Dj6gCVNPIoUszlAwdic0k0Vrk73-kw&s'
-                  loading="lazy"
-                  alt={tournament.name}
-                />
-              </AspectRatio>
-              <CardContent>
+              {windowSize <= 720 &&
+                <AspectRatio flex ratio="1" maxHeight={182} sx={{ minWidth: 182 }}>
+                  <img
+                    src={tournament.gameImageUrl ? folderImage + tournament.gameImageUrl : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7yMx7Dj6gCVNPIoUszlAwdic0k0Vrk73-kw&s'}
+                    loading="lazy"
+                    alt={tournament.name}
+                  />
+                </AspectRatio>
+              }
                 <Box>
                   <h3>ชื่อทัวร์นาเมนต์: </h3>
                   <p>{tournament.name}</p>
                 </Box>
                 <h4>ระดับของทัวร์นาเมนต์:</h4>
-                <Box sx={{ display: "Flex", flexDirection: "row", flexWrap: "wrap" }}>
-                  {tournament.listLevels && tournament.listLevels.map((level: any) => (
-                    <p key={level.id}> {levels && levels.find(x => x.id === level.levelId)?.name} ,</p>
+                <Box sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+                  {tournament.listLevels && tournament.listLevels.map((level: any, index: number) => (
+                    <span key={level.id}>
+                      {levels && levels.find(x => x.id === level.levelId)?.name}
+                      {index < tournament.listLevels.length - 1 ? ' , ' : ''}
+                    </span>
                   ))}
                 </Box>
 
-                <Sheet
-                  sx={{
-                    bgcolor: 'background.level1',
-                    borderRadius: 'sm',
-                    p: 1.5,
-                    my: 1.5,
-                    display: 'flex',
-                    gap: 2,
-                    '& > div': { flex: 1 },
-                  }}
-                >
-                  <div>
+                <Grid container spacing={2} sx={{ my: 1.5 }}>
+                  <Grid item xs={4} sx={{ backgroundColor: 'rgba(0, 0, 0, 0.1)', padding: 2}}>
+                    <h4>เงินรางวัลรวม:</h4>
+                    <p>{formatNumberWithCommas(tournament.prizes.reduce((acc:any, prize:any) => acc + prize.price, 0))} บาท</p>
+                  </Grid>
+                  <Grid item xs={4} sx={{ backgroundColor: 'rgba(0, 0, 0, 0.1)', padding: 2 }}>
                     <h4>เวลาที่เริ่มการแข่ง:</h4>
                     <p>{formatDate(tournament.startDate)}</p>
-                  </div>
-                  <div>
+                  </Grid>
+                  <Grid item xs={4} sx={{ backgroundColor: 'rgba(0, 0, 0, 0.1)', padding: 2}}>
                     <h4>เวลาที่สิ้นสุดการแข่ง:</h4>
                     <p>{formatDate(tournament.endDate)}</p>
-                  </div>
-                  <div>
-                    <h4>วันที่สร้างแข่ง:</h4>
-                    <p>{formatDate(tournament.dateCreated)}</p>
-                  </div>
-                </Sheet>
+                  </Grid>
+                </Grid>
 
-                <Box sx={{ display: 'flex', gap: 1.5, '& > button': { flex: 1 } }}>
-                  {matchAll.length <= 0 &&
-                    token !== "" ? (
+                <Box sx={{ display: 'flex', gap: 1.5, flexDirection: { xs: 'column', sm: 'row' }, '& > button': { flex: 1 } }}>
+                  {matchAll.length <= 0 && token !== "" ? (
                     user?.role === "Admin" ? (
                       <>
                         <Input
                           placeholder="ชื่อโรงเรียน..."
                           startDecorator={
-                            <Button sx={{ width: 35 }} variant="soft" color="neutral" disabled startDecorator={<SupervisedUserCircleIcon />}>
-                            </Button>
+                            <Button sx={{ width: 35 }} variant="soft" color="neutral" disabled startDecorator={<SupervisedUserCircleIcon />} />
                           }
                           value={addTeam}
                           onChange={(e) => setAddTeam(e.target.value)}
                           sx={{ borderRadius: 8 }}
                         />
                         <Button variant="outlined" color="neutral" onClick={() => regisTournament(tournament.id)}>
-                          ลงทะเบียนด่วน (กรอกชื่อโรงเรียน)
+                          <h4>ลงทะเบียนด่วน (กรอกชื่อโรงเรียน)</h4>
                         </Button>
                       </>
                     ) : (
                       <>
                         {teamByUser.length > 0 ? (
-                          <Select defaultValue={selectTeam} onChange={handleTeamChange}
-                            slotProps={{ 
+                          <Select
+                            defaultValue={selectTeam}
+                            onChange={handleTeamChange}
+                            slotProps={{
                               listbox: {
                                 component: 'div',
                                 sx: {
@@ -440,39 +544,36 @@ export default function TournamentPage() {
                               },
                             }}
                           >
-                            <Option value={0}>
-                              ทีมของฉัน
-                            </Option>
-                            {teamByUser && teamByUser
-                              .filter((item: any) =>
-                                tournament.listLevels.some((l: any) => l.levelId === item.levelId)
-                              )
-                              .map((team: any) => {
-                                const isRegistered = registrations && registrations.some(
-                                  (reg: any) => reg.tournamentId === tournament.id && reg.teamId === team.id
-                                );
-                                return (
-                                  <Option key={team.id} value={team.id} disabled={isRegistered}>
-                                    {team.schoolName} {isRegistered ? "(ทีมนี้ลงทะเบียนไปแล้ว)" : ""}
-                                  </Option>
-                                );
-                              })}
+                            <Option value={0}>ทีมของฉัน</Option>
+                            {teamByUser.filter((item: any) =>
+                              tournament.listLevels.some((l: any) => l.levelId === item.levelId)
+                            ).map((team: any) => {
+                              const isRegistered = registrations && registrations.some(
+                                (reg: any) => reg.tournamentId === tournament.id && reg.teamId === team.id
+                              );
+                              return (
+                                <Option key={team.id} value={team.id} disabled={isRegistered}>
+                                  {team.schoolName} {isRegistered ? "(ทีมนี้ลงทะเบียนไปแล้ว)" : ""}
+                                </Option>
+                              );
+                            })}
                           </Select>
                         ) : (
                           <h4>ไม่มีทีม</h4>
                         )}
                         <Button variant="solid" color="primary" onClick={() => regisTournament(tournament.id)}>
-                          ลงทะเบียนทีม
+                          <h4>ลงทะเบียนทีม</h4>
                         </Button>
                       </>
                     )
-                  ) : null
-                  }
+                  ) : null}
+
                   <Button variant="solid" color="primary" onClick={() => navigate.navigateToTournamentDetail(tournament.id)}>
-                    รายละเอียดการแข่งขัน
+                    <h4>รายละเอียดการแข่งขัน</h4>
                   </Button>
                 </Box>
               </CardContent>
+
             </Card>
           )
         })}
@@ -485,9 +586,12 @@ export default function TournamentPage() {
           />
         }
         <Modal open={openAddAndUpdateModal} onClose={handleCloseModal}>
-          <ModalDialog>
+          <ModalDialog sx={{
+            width: { xs: '100%', sm: 600 }, // กว้าง 600 เมื่อหน้าจอขนาดกลางขึ้นไป
+            maxWidth: '90%', // จำกัดความกว้างสูงสุดที่ 90% ของหน้าจอ
+          }}>
             <ModalClose />
-            <Box sx={{ overflow: 'auto', maxHeight: 600, width: 600 }}>
+            <Box sx={{ overflow: 'auto', maxHeight: 600 }}>
               <Box>
                 <h3></h3>
                 <h4>ชื่อทัวร์นาเมนต์</h4>
@@ -534,7 +638,7 @@ export default function TournamentPage() {
                   input: {
                     min: convertToBuddhistYear(new Date().toISOString().split('T')[0]),
                   },
-                }} name="startDate" required value={id !== 0 ? startDate : convertToBuddhistYear(startDate)} onChange={(e) => {
+                }} name="startDate" required value={convertToBuddhistYear(startDate)} onChange={(e) => {
                   const value = e.target.value;
                   if (value === '') {
                     setStartDate('');
@@ -551,7 +655,7 @@ export default function TournamentPage() {
                       .split('T')[0])
                       : convertToBuddhistYear(new Date().toISOString().split('T')[0]),
                   },
-                }} name="endDate" required disabled={!startDate} value={id !== 0 ? endDate : convertToBuddhistYear(endDate)} onChange={(e) => {
+                }} name="endDate" required disabled={!startDate} value={convertToBuddhistYear(endDate)} onChange={(e) => {
                   const value = e.target.value;
                   if (value === '') {
                     setEndDate('');
@@ -563,16 +667,78 @@ export default function TournamentPage() {
                 }} />
               </Box>
               <Box>
-                <Box sx={{ textAlign: "end" }}>
-                  <Button
-                    variant="solid"
-                    color="primary"
-                    sx={{ mt: 2 }}
-                    onClick={cAUTournament}
-                  >
-                    ยืนยัน
-                  </Button>
+                <h4>รูปภาพเกม</h4>
+                <div {...getRootProp.getRootProps()} style={dropzoneStyles}>
+                  <input {...getRootProp.getInputProps()} />
+                  {image ? (
+                    <img src={typeof image === 'string' ? folderImage + image : URL.createObjectURL(image)} alt="Preview" style={previewStyles} />
+                  ) : (
+                    <p>ลากและวางรูปภาพที่นี่ หรือคลิกเพื่อเลือกหนึ่งภาพ</p>
+                  )}
+                </div>
+
+                <h4>
+                  จำนวนรางวัล
+                </h4>
+                <Input name="membersCount" type='number' fullWidth required value={prizesCount} onChange={(e) => setPrizesCount(e.target.value)} />
+
+                <Button variant="solid" sx={{ mt: 1 }} disabled={prizesCount ? false : true} onClick={handleAddPrizes}>
+                  สร้างช่องกรอกรางวัล
+                </Button>
+
+                {prizes.map((prize, index) => (
+                  <Box key={index} sx={{ mt: 2 }}>
+                    <h4>{`รางวัลที่ ${index + 1}`}</h4>
+                    <Input name="price" type="number" fullWidth required value={prize.price} onChange={(e) => handlePrizeChange(index, 'price', e.target.value)} />
+                  </Box>
+                ))}
+                <Box>
+                  <Box sx={{ textAlign: "end" }}>
+                    <Button
+                      variant="solid"
+                      color="primary"
+                      sx={{ mt: 2 }}
+                      onClick={cAUTournament}
+                    >
+                      ยืนยัน
+                    </Button>
+                  </Box>
                 </Box>
+              </Box>
+            </Box>
+          </ModalDialog>
+        </Modal>
+        <Modal open={openHideOrNotHideModal} onClose={handleCloseHideOrNotHideModal}>
+          <ModalDialog sx={{
+            width: { xs: '100%', sm: 600 }, // กว้าง 600 เมื่อหน้าจอขนาดกลางขึ้นไป
+            maxWidth: '90%', // จำกัดความกว้างสูงสุดที่ 90% ของหน้าจอ
+          }}>
+            <ModalClose />
+            <Box sx={{ overflow: 'auto', maxHeight: 600 }}>
+              <Box>
+                <h4>ปีที่จะซ่อน/ยกเลิกซ่อน</h4>
+                <Select
+                  value={year}
+                  onChange={handleYearChange}
+                  placeholder="กรุณาเลือกปี"
+                  sx={{ mb: 2 }} // เพิ่มระยะห่าง
+                >
+                  {years.map((yearValue) => (
+                    <Option key={yearValue} value={yearValue}>
+                      {yearValue}
+                    </Option>
+                  ))}
+                </Select>
+              </Box>
+              <Box sx={{ textAlign: "end" }}>
+                <Button
+                  variant="solid"
+                  color="primary"
+                  sx={{ mt: 2 }}
+                  onClick={hideTournamentByYear}
+                >
+                  ยืนยัน
+                </Button>
               </Box>
             </Box>
           </ModalDialog>
@@ -581,3 +747,17 @@ export default function TournamentPage() {
     </Container>
   );
 }
+
+const dropzoneStyles:any = {
+  border: '2px dashed #ccc',
+  borderRadius: '4px',
+  padding: '20px',
+  textAlign: 'center',
+  cursor: 'pointer',
+};
+
+const previewStyles:any = {
+  maxWidth: '300px',
+  maxHeight: '400px',
+  marginTop: '10px',
+};

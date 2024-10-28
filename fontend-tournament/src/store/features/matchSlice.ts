@@ -30,8 +30,8 @@ export const randomMatch = createAsyncThunk<Match, FieldValues>(
   async (data) => {
     try {
       const Match = await agent.Matchs.randomMatchs({
-        tournamentId :data.tournamentId,
-        notOneRound :data.notOneRound,
+        tournamentId: data.tournamentId,
+        notOneRound: data.notOneRound,
       });
 
       return Match;
@@ -46,8 +46,8 @@ export const updateMatch = createAsyncThunk<Match, FieldValues>(
   async (data) => {
     try {
       const Match = await agent.Matchs.updateMatch({
-        matchId :data.matchId,
-        winningTeamId :data.winningTeamId,
+        matchId: data.matchId,
+        winningTeamId: data.winningTeamId,
       });
 
       return Match;
@@ -61,6 +61,21 @@ export const resetTeamsAndDeleteMatches = createAsyncThunk(
   async (id: number) => {
     try {
       const Match = await agent.Matchs.resetTeamsAndDeleteMatches(id);
+      return Match;
+    } catch (error) {
+      console.log("error", error);
+    }
+  }
+);
+export const resetMatchesByRound = createAsyncThunk<Match, FieldValues>(
+  "auth/fetchresetResetMatchesByRound",
+  async (data) => {
+    try {
+      const Match = await agent.Matchs.resetMatchesForRound({
+        tournamentId: data.tournamentId,
+        round: data.round,
+      });
+
       return Match;
     } catch (error) {
       console.log("error", error);

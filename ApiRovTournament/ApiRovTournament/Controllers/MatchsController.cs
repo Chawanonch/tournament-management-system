@@ -59,5 +59,14 @@ namespace ApiRovTournament.Controllers
             if (result == null) return BadRequest("id not found.");
             return Ok(result);
         }
+
+
+        [HttpPost("ResetMatchesForRound"), Authorize]
+        public async Task<IActionResult> ResetMatchesForRound(ResetMatchForRoundDto dto)
+        {
+            var result = await _matchService.ResetMatchesForRound(dto);
+            if (result == null) return BadRequest("id not found.");
+            return Ok(result);
+        }
     }
 }

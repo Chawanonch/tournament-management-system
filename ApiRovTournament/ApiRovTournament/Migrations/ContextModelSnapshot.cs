@@ -22,6 +22,136 @@ namespace ApiRovTournament.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ApiRovTournament.Models.AllDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("LinkDetail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AllDetails");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.Certificate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CertificateNumber")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rank")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TeamId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TextInImageId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeamId");
+
+                    b.HasIndex("TextInImageId");
+
+                    b.ToTable("Certificates");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.Compete", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CompetitionListId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsHide")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompetitionListId");
+
+                    b.ToTable("Competes");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.Competition", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Competitions");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.CompetitionList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CompetitionId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateTimeYear")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompetitionId");
+
+                    b.ToTable("CompetitionLists");
+                });
+
             modelBuilder.Entity("ApiRovTournament.Models.Level", b =>
                 {
                     b.Property<int>("Id")
@@ -74,6 +204,29 @@ namespace ApiRovTournament.Migrations
                     b.ToTable("ListLevels");
                 });
 
+            modelBuilder.Entity("ApiRovTournament.Models.ListLevelCompete", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CompeteId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LevelId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompeteId");
+
+                    b.HasIndex("LevelId");
+
+                    b.ToTable("ListLevelCompetes");
+                });
+
             modelBuilder.Entity("ApiRovTournament.Models.ListMember", b =>
                 {
                     b.Property<int>("Id")
@@ -98,6 +251,106 @@ namespace ApiRovTournament.Migrations
                     b.HasIndex("TeamId");
 
                     b.ToTable("ListMembers");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.ListNameCompetitionDetails", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CompetitionListId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompetitionListId");
+
+                    b.ToTable("ListNameCompetitionDetails");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.ListPrize", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Rank")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TournamentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TournamentId");
+
+                    b.ToTable("Prizes");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.ListSignerDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CertificateId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SignerDetailId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CertificateId");
+
+                    b.HasIndex("SignerDetailId");
+
+                    b.ToTable("ListSignerDetails");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.ListTrainer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TeamId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeamId");
+
+                    b.ToTable("ListTrainers");
                 });
 
             modelBuilder.Entity("ApiRovTournament.Models.Match", b =>
@@ -169,6 +422,38 @@ namespace ApiRovTournament.Migrations
                     b.ToTable("Registrations");
                 });
 
+            modelBuilder.Entity("ApiRovTournament.Models.RegistrationCompete", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CompeteId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateRegistration")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Number")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TeamId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompeteId");
+
+                    b.HasIndex("TeamId");
+
+                    b.ToTable("RegistrationCompetes");
+                });
+
             modelBuilder.Entity("ApiRovTournament.Models.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -196,6 +481,31 @@ namespace ApiRovTournament.Migrations
                             Id = 2,
                             Name = "User"
                         });
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.SignerDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SignatureImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SignerDetails");
                 });
 
             modelBuilder.Entity("ApiRovTournament.Models.Team", b =>
@@ -228,6 +538,23 @@ namespace ApiRovTournament.Migrations
                     b.ToTable("Teams");
                 });
 
+            modelBuilder.Entity("ApiRovTournament.Models.TextInImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TextInImages");
+                });
+
             modelBuilder.Entity("ApiRovTournament.Models.Tournament", b =>
                 {
                     b.Property<int>("Id")
@@ -241,6 +568,10 @@ namespace ApiRovTournament.Migrations
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("GameImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsHide")
                         .HasColumnType("bit");
@@ -287,6 +618,47 @@ namespace ApiRovTournament.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("ApiRovTournament.Models.Certificate", b =>
+                {
+                    b.HasOne("ApiRovTournament.Models.Team", "Team")
+                        .WithMany()
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ApiRovTournament.Models.TextInImage", "TextInImage")
+                        .WithMany()
+                        .HasForeignKey("TextInImageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Team");
+
+                    b.Navigation("TextInImage");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.Compete", b =>
+                {
+                    b.HasOne("ApiRovTournament.Models.CompetitionList", "CompetitionList")
+                        .WithMany()
+                        .HasForeignKey("CompetitionListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CompetitionList");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.CompetitionList", b =>
+                {
+                    b.HasOne("ApiRovTournament.Models.Competition", "Competition")
+                        .WithMany()
+                        .HasForeignKey("CompetitionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Competition");
+                });
+
             modelBuilder.Entity("ApiRovTournament.Models.ListLevel", b =>
                 {
                     b.HasOne("ApiRovTournament.Models.Level", "Level")
@@ -306,6 +678,25 @@ namespace ApiRovTournament.Migrations
                     b.Navigation("Tournament");
                 });
 
+            modelBuilder.Entity("ApiRovTournament.Models.ListLevelCompete", b =>
+                {
+                    b.HasOne("ApiRovTournament.Models.Compete", "Compete")
+                        .WithMany("ListLevelCompetes")
+                        .HasForeignKey("CompeteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ApiRovTournament.Models.Level", "Level")
+                        .WithMany()
+                        .HasForeignKey("LevelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Compete");
+
+                    b.Navigation("Level");
+                });
+
             modelBuilder.Entity("ApiRovTournament.Models.ListMember", b =>
                 {
                     b.HasOne("ApiRovTournament.Models.Team", "Team")
@@ -317,15 +708,67 @@ namespace ApiRovTournament.Migrations
                     b.Navigation("Team");
                 });
 
+            modelBuilder.Entity("ApiRovTournament.Models.ListNameCompetitionDetails", b =>
+                {
+                    b.HasOne("ApiRovTournament.Models.CompetitionList", "CompetitionList")
+                        .WithMany("Details")
+                        .HasForeignKey("CompetitionListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CompetitionList");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.ListPrize", b =>
+                {
+                    b.HasOne("ApiRovTournament.Models.Tournament", "Tournament")
+                        .WithMany("Prizes")
+                        .HasForeignKey("TournamentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tournament");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.ListSignerDetail", b =>
+                {
+                    b.HasOne("ApiRovTournament.Models.Certificate", "Certificate")
+                        .WithMany("ListSignerDetails")
+                        .HasForeignKey("CertificateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ApiRovTournament.Models.SignerDetail", "SignerDetail")
+                        .WithMany()
+                        .HasForeignKey("SignerDetailId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Certificate");
+
+                    b.Navigation("SignerDetail");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.ListTrainer", b =>
+                {
+                    b.HasOne("ApiRovTournament.Models.Team", "Team")
+                        .WithMany("ListTrainers")
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Team");
+                });
+
             modelBuilder.Entity("ApiRovTournament.Models.Match", b =>
                 {
-                    b.HasOne("ApiRovTournament.Models.Registration", "Team1")
+                    b.HasOne("ApiRovTournament.Models.Team", "Team1")
                         .WithMany()
                         .HasForeignKey("Team1Id")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("ApiRovTournament.Models.Registration", "Team2")
+                    b.HasOne("ApiRovTournament.Models.Team", "Team2")
                         .WithMany()
                         .HasForeignKey("Team2Id")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -363,6 +806,25 @@ namespace ApiRovTournament.Migrations
                     b.Navigation("Tournament");
                 });
 
+            modelBuilder.Entity("ApiRovTournament.Models.RegistrationCompete", b =>
+                {
+                    b.HasOne("ApiRovTournament.Models.Compete", "Compete")
+                        .WithMany()
+                        .HasForeignKey("CompeteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ApiRovTournament.Models.Team", "Team")
+                        .WithMany()
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Compete");
+
+                    b.Navigation("Team");
+                });
+
             modelBuilder.Entity("ApiRovTournament.Models.Team", b =>
                 {
                     b.HasOne("ApiRovTournament.Models.Level", "Level")
@@ -393,14 +855,33 @@ namespace ApiRovTournament.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("ApiRovTournament.Models.Certificate", b =>
+                {
+                    b.Navigation("ListSignerDetails");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.Compete", b =>
+                {
+                    b.Navigation("ListLevelCompetes");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.CompetitionList", b =>
+                {
+                    b.Navigation("Details");
+                });
+
             modelBuilder.Entity("ApiRovTournament.Models.Team", b =>
                 {
                     b.Navigation("ListMembers");
+
+                    b.Navigation("ListTrainers");
                 });
 
             modelBuilder.Entity("ApiRovTournament.Models.Tournament", b =>
                 {
                     b.Navigation("ListLevels");
+
+                    b.Navigation("Prizes");
                 });
 #pragma warning restore 612, 618
         }

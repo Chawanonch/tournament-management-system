@@ -30,7 +30,7 @@ namespace ApiRovTournament.Controllers
         }
 
         [HttpPost("Registration"), Authorize]
-        public async Task<IActionResult> Registration(RegistrationRequest dto)
+        public async Task<IActionResult> Registration([FromBody]RegistrationRequest dto)
         {
             var result = await _registrationService.Registration(dto);
             if (result == null) return BadRequest(result);
@@ -62,6 +62,54 @@ namespace ApiRovTournament.Controllers
         public async Task<IActionResult> RemoveRegistration(int id)
         {
             var result = await _registrationService.RemoveRegistration(id);
+            if (result == null) return BadRequest("id not found.");
+            return Ok(result);
+        }
+
+        [HttpGet("GetRegistrationCompetes")]
+        public async Task<IActionResult> GetRegistrationCompetes() => Ok(await _registrationService.GetRegistrationCompetes());
+
+        [HttpGet("GetByIdRegistrationCompete")]
+        public async Task<IActionResult> GetByIdRegistrationCompete(int id)
+        {
+            var result = await _registrationService.GetByIdRegistrationCompete(id);
+            if (result == null) return NotFound("id not found.");
+            return Ok(result);
+        }
+
+        [HttpPost("RegistrationCompete"), Authorize]
+        public async Task<IActionResult> RegistrationCompete([FromBody] RegistrationCompeteRequest dto)
+        {
+            var result = await _registrationService.RegistrationCompete(dto);
+            if (result == null) return BadRequest(result);
+            return Ok(result);
+        }
+
+        [HttpGet("CheckInRegistrationCompetes"), Authorize]
+        public async Task<IActionResult> CheckInRegistrationCompetes(int id)
+        {
+            var result = await _registrationService.CheckInRegistrationCompetes(id);
+            if (result == null) return BadRequest(result);
+            return Ok(result);
+        }
+        [HttpGet("CheckInAllRegistrationCompetes"), Authorize]
+        public async Task<IActionResult> CheckInAllRegistrationCompetes(int id)
+        {
+            var result = await _registrationService.CheckInAllRegistrationCompetes(id);
+            if (result == null) return BadRequest(result);
+            return Ok(result);
+        }
+        [HttpGet("CancelCheckInAllRegistrationCompetes"), Authorize]
+        public async Task<IActionResult> CancelCheckInAllRegistrationCompetes(int id)
+        {
+            var result = await _registrationService.CancelCheckInAllRegistrationCompetes(id);
+            if (result == null) return BadRequest(result);
+            return Ok(result);
+        }
+        [HttpDelete("RemoveRegistrationCompete"), Authorize]
+        public async Task<IActionResult> RemoveRegistrationCompete(int id)
+        {
+            var result = await _registrationService.RemoveRegistrationCompete(id);
             if (result == null) return BadRequest("id not found.");
             return Ok(result);
         }

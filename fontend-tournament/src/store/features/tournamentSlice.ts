@@ -33,19 +33,19 @@ export const createAndUpdateTournament  = createAsyncThunk<Tournament, FieldValu
   "auth/fetchCreateAndUpdateTournament",
   async (data) => {
     try {
-      const formattedlistLevels =
-        data.listLevels && data.listLevels.map((item:number) => ({
-          Id: 0,
-          LevelId: item,
-          TournamentId : 0
-        }));
-
       const Tournament = await agent.Tournaments.creatAndUpdateTournament({
         Id : data.id,
         Name : data.name,
         StartDate: data.startDate,
         EndDate: data.endDate,
-        ListLevels: formattedlistLevels
+        ListLevels: data.listLevels && data.listLevels.map((item:number) => ({
+          LevelId: item
+        })),
+        Prizes: data.prizes && data.prizes.map((prize:any) => ({
+          Rank: prize.rank,
+          Price: Number(prize.price)
+        })),
+        GameImageUrl: data.image
       });
 
       return Tournament;
@@ -60,6 +60,17 @@ export const statusHideTournament = createAsyncThunk(
   async (id:number) => {
     try {
       const Tournament = await agent.Tournaments.statusHideTournament(id);
+      return Tournament;
+    } catch (error) {
+      console.log("error", error);
+    }
+  }
+);
+export const statusHideTournaments = createAsyncThunk(
+  "auth/fetchStatusHideTournaments",
+  async (year:number) => {
+    try {
+      const Tournament = await agent.Tournaments.statusHideTournaments(year);
       return Tournament;
     } catch (error) {
       console.log("error", error);

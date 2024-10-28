@@ -1,8 +1,11 @@
 ﻿using ApiRovTournament.Dtos;
+using ApiRovTournament.Models;
 using ApiRovTournament.Services.IServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.Text.Json;
 
 namespace ApiRovTournament.Controllers
 {
@@ -29,8 +32,20 @@ namespace ApiRovTournament.Controllers
         }
 
         [HttpPost("CAUTournament"), Authorize]
-        public async Task<IActionResult> CAUGetTournament([FromBody] TournamentRequest request)
+        public async Task<IActionResult> CAUTournament([FromForm] TournamentRequest request)
         {
+            var listLevelsJson = Request.Form["ListLevels"].FirstOrDefault();
+            var prizesJson = Request.Form["Prizes"].FirstOrDefault();
+            
+            if (listLevelsJson != null)
+            {
+                request.ListLevels = JsonSerializer.Deserialize<List<ListLevelDto>>(listLevelsJson);
+            }
+
+            if (prizesJson != null)
+            {
+                request.Prizes = JsonSerializer.Deserialize<List<ListPrizeDto>>(prizesJson);
+            }
             var result = await _tournamentService.CAUTournament(request);
             if (result == null) return BadRequest(result);
             return Ok(result);
@@ -40,6 +55,13 @@ namespace ApiRovTournament.Controllers
         public async Task<IActionResult> StatusHideTournament(int id)
         {
             var result = await _tournamentService.StatusHideTournament(id);
+            if (result == null) return BadRequest("id not found.");
+            return Ok(result);
+        }
+        [HttpGet("StatusHideTournaments"), Authorize]
+        public async Task<IActionResult> StatusHideTournaments(int year)
+        {
+            var result = await _tournamentService.StatusHideTournaments(year);
             if (result == null) return BadRequest("id not found.");
             return Ok(result);
         }

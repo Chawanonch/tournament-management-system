@@ -15,11 +15,11 @@ namespace ApiRovTournament.Models
         public int Team1Id { get; set; }
         [ForeignKey("Team1Id")]
         [JsonIgnore]
-        public Registration Team1 { get; set; } 
+        public Team Team1 { get; set; } 
         public int Team2Id { get; set; }
         [ForeignKey("Team2Id")]
         [JsonIgnore]
-        public Registration Team2 { get; set; } 
+        public Team Team2 { get; set; } 
         public int WinnerTeamId { get; set; }
         public DateTime MatchDate { get; set; }
         public int Round { get; set; }

@@ -18,6 +18,16 @@ import { getRegistration } from './store/features/registrationSlice'
 import { getMatch } from './store/features/matchSlice'
 import { routes } from './components/Path'
 import AnnouncePage from './pages/AnnouncePage'
+import CertificatePage from './pages/CertificatePage'
+import { getCertificate } from './store/features/certificateSlice'
+import CompetitionPage from './pages/CompetitionPage'
+import { getCompetition } from './store/features/competitionSlice'
+import CompetePage from './pages/CompetePage'
+import { getCompete } from './store/features/competeSlice'
+import CompetitionTypePage from './pages/CompetitionTypePage'
+import CompeteDetailPage from './pages/CompeteDetailPage'
+import { getTextInImage } from './store/features/textInImageSlice'
+import { getSignerDetail } from './store/features/signerSlice'
 
 function App() {
   const { token } = useAppSelector((state) => state.user); // สมมติว่ามีทัวร์นาเมนต์หลายรายการ
@@ -26,11 +36,16 @@ function App() {
 
   const fetchNoToken = async () => {
     await dispatch(getUserAdmin());
+    await dispatch(getCompetition());
     await dispatch(getTournament());
     await dispatch(getRegistration());
     await dispatch(getTeams());
     await dispatch(getLevel());
     await dispatch(getMatch());
+    await dispatch(getCertificate());
+    await dispatch(getCompete());
+    await dispatch(getTextInImage());
+    await dispatch(getSignerDetail());
   }
 
   const fetchToken = async () => {
@@ -65,12 +80,17 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <div style={{ marginTop: 120 }}>
+      <div style={{ marginTop: 135 }}>
         <Routes>
           <Route path={routes.home} element={<HomePage />} />
+          <Route path={routes.competitionType} element={<CompetitionTypePage />} />
+          <Route path={routes.competition} element={<CompetitionPage />} />
+          <Route path={routes.compete} element={<CompetePage />} />
+          <Route path={routes.competeId} element={<CompeteDetailPage />} />
           <Route path={routes.tournament} element={<TournamentPage />} />
           <Route path={routes.tournamentId} element={<TournamentDetailPage />} />
           <Route path={routes.announce} element={<AnnouncePage />} />
+          <Route path={routes.certificate} element={<CertificatePage />} />
           <Route path={routes.team} element={<TeamsPage />} />
           {token === "" &&
             <Route path={routes.login} element={<LoginPage />} />

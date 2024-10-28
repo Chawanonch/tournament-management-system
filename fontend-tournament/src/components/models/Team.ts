@@ -9,6 +9,14 @@ export interface Team {
             teamId: number;
         }
     ];
+    listTrainers: [
+        {
+            id: number;
+            name: string;
+            position: string;
+            teamId: number;
+        }
+    ];
     created: string;
     userId: number;
     levelId: number;

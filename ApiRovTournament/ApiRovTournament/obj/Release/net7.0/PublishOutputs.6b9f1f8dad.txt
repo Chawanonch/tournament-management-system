@@ -52,9 +52,7 @@ D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Release\net7.0\PubTmp\Out\runti
 D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Release\net7.0\PubTmp\Out\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Release\net7.0\PubTmp\Out\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Release\net7.0\PubTmp\Out\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Release\net7.0\PubTmp\Out\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
 D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Windows.Extensions.dll

@@ -6,6 +6,11 @@ import teamSlice from './features/teamSlice'
 import levelSlice from './features/levelSlice'
 import registrationSlice from './features/registrationSlice'
 import matchSlice from './features/matchSlice'
+import certificateSlice from './features/certificateSlice'
+import competitionSlice from './features/competitionSlice'
+import competeSlice from './features/competeSlice'
+import textInImageSlice from './features/textInImageSlice'
+import signerSlice from './features/signerSlice'
 
 export const store = configureStore({
   reducer: {
@@ -14,7 +19,12 @@ export const store = configureStore({
     team: teamSlice,
     level: levelSlice,
     registration: registrationSlice,
-    match: matchSlice
+    match: matchSlice,
+    certificate: certificateSlice,
+    competition: competitionSlice,
+    compete: competeSlice,
+    textInImage: textInImageSlice,
+    signer: signerSlice,
   },
 })
 

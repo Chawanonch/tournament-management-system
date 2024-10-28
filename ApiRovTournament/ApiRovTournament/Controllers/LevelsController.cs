@@ -21,7 +21,7 @@ namespace ApiRovTournament.Controllers
         public async Task<IActionResult> GetLevels() => Ok(await _levelService.GetLevels());
 
         [HttpGet("GetByIdLevel")]
-        public async Task<IActionResult> GetByIdTournament(int id)
+        public async Task<IActionResult> GetByIdLevel(int id)
         {
             var result = await _levelService.GetByIdLevel(id);
             if (result == null) return NotFound("id not found.");
@@ -29,11 +29,11 @@ namespace ApiRovTournament.Controllers
         }
 
         [HttpPost("CAULevel"), Authorize]
-        public async Task<IActionResult> CAUGetTournament([FromForm] LevelRequest request)
+        public async Task<IActionResult> CAULevel([FromForm] LevelRequest request)
         {
             var result = await _levelService.CAULevel(request);
             if (result == null) return BadRequest(result);
-            return Ok("Success");
+            return Ok(result);
         }
 
         [HttpDelete("RemoveLevel"), Authorize]

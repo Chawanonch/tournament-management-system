@@ -21,28 +21,140 @@
       "PackagePath": "staticwebassets\\FTlUny0VUAAglxT.jpg"
     },
     {
-      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\THSarabunNew-COwRCkXB.ttf",
-      "PackagePath": "staticwebassets\\assets\\THSarabunNew-COwRCkXB.ttf"
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\THSarabunNew.ttf",
+      "PackagePath": "staticwebassets\\THSarabunNew.ttf"
     },
     {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\html2canvas.esm-CBrSDip1.js",
       "PackagePath": "staticwebassets\\assets\\html2canvas.esm-CBrSDip1.js"
     },
     {
-      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index-B6GXHXGM.css",
-      "PackagePath": "staticwebassets\\assets\\index-B6GXHXGM.css"
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index-CvhduR6b.css",
+      "PackagePath": "staticwebassets\\assets\\index-CvhduR6b.css"
     },
     {
-      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index-BciNkl7E.js",
-      "PackagePath": "staticwebassets\\assets\\index-BciNkl7E.js"
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index-CyIpvU9O.js",
+      "PackagePath": "staticwebassets\\assets\\index-CyIpvU9O.js"
     },
     {
-      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index.es-DiN6-XrQ.js",
-      "PackagePath": "staticwebassets\\assets\\index.es-DiN6-XrQ.js"
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index.es-BNhZiWcZ.js",
+      "PackagePath": "staticwebassets\\assets\\index.es-BNhZiWcZ.js"
     },
     {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\purify.es-DGIRlouP.js",
       "PackagePath": "staticwebassets\\assets\\purify.es-DGIRlouP.js"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\bg\\bg1.jpg",
+      "PackagePath": "staticwebassets\\bg\\bg1.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\bg\\bg2.png",
+      "PackagePath": "staticwebassets\\bg\\bg2.png"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\bg\\bgCertificate.jpg",
+      "PackagePath": "staticwebassets\\bg\\bgCertificate.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-Black.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-Black.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-BlackItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-BlackItalic.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-Bold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-Bold.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-BoldItalic.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-ExtraBold.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-ExtraBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-ExtraBoldItalic.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-ExtraLight.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-ExtraLight.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-ExtraLightItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-ExtraLightItalic.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-Italic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-Italic.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-Light.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-Light.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-LightItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-LightItalic.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-Medium.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-Medium.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-MediumItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-MediumItalic.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-Regular.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-SemiBold.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-SemiBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-SemiBoldItalic.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-Thin.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-Thin.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\Kanit-ThinItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Kanit-ThinItalic.ttf"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\fonts\\OFL.txt",
+      "PackagePath": "staticwebassets\\fonts\\OFL.txt"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\icon\\kru.png",
+      "PackagePath": "staticwebassets\\icon\\kru.png"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\2aadf551-d4b2-4b73-a204-7f7708213abc.png",
+      "PackagePath": "staticwebassets\\images\\2aadf551-d4b2-4b73-a204-7f7708213abc.png"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\6e468444-a607-4093-a5eb-74b0f24f1c3f.png",
+      "PackagePath": "staticwebassets\\images\\6e468444-a607-4093-a5eb-74b0f24f1c3f.png"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\a99747e4-e7a9-4eb4-b49d-73476ef9deb1.jpg",
+      "PackagePath": "staticwebassets\\images\\a99747e4-e7a9-4eb4-b49d-73476ef9deb1.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\d9f075fc-6253-4c42-bc9d-4fe9c702c252.png",
+      "PackagePath": "staticwebassets\\images\\d9f075fc-6253-4c42-bc9d-4fe9c702c252.png"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\fc7093f6-9cf2-4705-a274-f85843938b5b.png",
+      "PackagePath": "staticwebassets\\images\\fc7093f6-9cf2-4705-a274-f85843938b5b.png"
     },
     {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\index.html",
