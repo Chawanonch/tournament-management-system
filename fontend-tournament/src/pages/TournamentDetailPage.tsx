@@ -374,39 +374,6 @@ export default function TournamentDetailPage() {
         setSelectedRoundIndex(index);
     };
 
-    // const handleOneTwoThree = () => {
-    //     // รวม winnerTeamId ทั้งหมด
-    //     const winnerTeamIds = Object.values(matchesByRound).flatMap((round: any) => round.map((match: any) => match.winnerTeamId));
-
-    //     // นับจำนวนการเกิดขึ้นของแต่ละ winnerTeamId
-    //     const winnerTeamIdCounts = winnerTeamIds.reduce((acc, winnerId) => {
-    //         acc[winnerId] = (acc[winnerId] || 0) + 1;
-    //         return acc;
-    //     }, {});
-
-    //     // เรียงลำดับตามจำนวนการเกิดขึ้น
-    //     const sortedWinnerTeamIds = Object.entries(winnerTeamIdCounts)
-    //         .sort((a: any, b: any) => b[1] - a[1])
-    //         .map(([winnerId]) => winnerId);
-
-    //     // ตรวจสอบว่าคู่สุดท้ายแข่งขันเสร็จสิ้นหรือยัง
-    //     const lastRound: any = Object.values(matchesByRound).pop();
-    //     const isLastRoundComplete = lastRound.every((match: any) => match.winnerTeamId !== undefined);
-
-    //     // เลือก 3 อันดับแรก ถ้าคู่สุดท้ายแข่งขันเสร็จสิ้น
-    //     const top3WinnerTeamIds = isLastRoundComplete ? sortedWinnerTeamIds.slice(0, 3) : [];
-
-    //     const top3Teams = top3WinnerTeamIds.map((teamId, index) => {
-    //         const team = findTeam(Number(teamId));
-    //         return {
-    //             rank: index + 1,
-    //             schoolName: team ? team.schoolName : 'ไม่พบข้อมูลทีม'
-    //         };
-    //     });
-
-    //     navigatee(routes.announce, { state: { top3Teams } });
-    // };
-    //#endregion
     const THSarabunNew = `${routes.home}THSarabunNew.ttf`;
 
     const downloadPdfByRound = (round: string, matches: any) => {

@@ -11,7 +11,6 @@ import AddTaskIcon from '@mui/icons-material/AddTask';
 import Alert2 from '../components/Alert2';
 import { createAndUpdateAllDetail, createAndUpdateCompetition, createAndUpdateCompetitionList, getCompetition, removeAllDetail, removeCompetitionList } from '../store/features/competitionSlice';
 import EditIcon from '@mui/icons-material/Edit';
-import LinkIcon from '@mui/icons-material/Link';
 import CloseIcon from '@mui/icons-material/Close';
 import { convertToBuddhistYear, convertToGregorianYear } from '../components/Reuse';
 import Swal from 'sweetalert2';
@@ -51,6 +50,7 @@ export default function CompetitionPage() {
 
   const [idlinkDetail, setIdLinkDetail] = useState(0);
   const [linkDetail, setLinkDetail] = useState("");
+  const [textLink, setTextLink] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value);
@@ -110,6 +110,7 @@ export default function CompetitionPage() {
       if (allDetail) {
         setIdLinkDetail(allDetail.id);
         setLinkDetail(allDetail.linkDetail);
+        setTextLink(allDetail.text);
       }
     }
   }
@@ -118,6 +119,7 @@ export default function CompetitionPage() {
     setOpenLinkModal(false);
     setIdLinkDetail(0);
     setLinkDetail("");
+    setTextLink("");
   }
 
   const handleCompetitionIdChange = (
@@ -177,7 +179,7 @@ export default function CompetitionPage() {
   };
 
   const cAUAllDetail = async () => {
-    const item = await dispatch(createAndUpdateAllDetail({ idlinkDetail, linkDetail }));
+    const item = await dispatch(createAndUpdateAllDetail({ idlinkDetail, textLink,linkDetail }));
     if (item.payload !== "" && item.payload !== undefined) {
       alert.alertCustom(1, idlinkDetail === 0 ? "สร้างลิงค์เพิ่มสำเร็จ" : "แก้ไขลิงค์สำเร็จ");
 
@@ -284,7 +286,7 @@ export default function CompetitionPage() {
       }
 
       <Box display="flex" flexDirection="row" alignItems="center" justifyContent="center" marginBottom={2} flexWrap="wrap">
-        <span style={{ textAlign: "center", flexBasis: '100%' }}>คลิกเพื่อดูระเบียบการประกวดผลงานและการแข่งขันทักษะทางวิทยาศาสตร์ทั้งหมด</span>
+        <h4 style={{ textAlign: "center", flexBasis: '100%' }}>คลิกเพื่อดู</h4>
         {AllDetails && AllDetails.map((detail, index) => (
           <FormControl key={index} sx={{ maxWidth: 200, margin: 1, flexDirection: "row" }}>
             {user && user?.role === "Admin" &&
@@ -292,9 +294,19 @@ export default function CompetitionPage() {
                 <EditIcon color='warning' />
               </IconButton>
             }
-            <IconButton onClick={() => window.open(detail.linkDetail, '_blank')} variant="outlined">
-              <LinkIcon color='secondary' />
-            </IconButton>
+            <h4 
+              onClick={() => window.open(detail.linkDetail, '_blank')} 
+              style={{ 
+                cursor: 'pointer', 
+                color: 'blue', 
+                textDecoration: 'underline',
+                whiteSpace: 'normal', // หรือ 'nowrap' ถ้าต้องการให้ข้อความอยู่ในบรรทัดเดียว
+                overflow: 'visible', // หากต้องการให้แสดงข้อความทั้งหมด
+                textOverflow: 'clip' // หากไม่ต้องการให้มีการตัดข้อความ
+              }}
+            >
+              {detail.text}
+            </h4>
             {user && user?.role === "Admin" &&
               <IconButton variant="outlined" sx={{ ml: 1 }} onClick={() => removeLinkDetail(detail.id)}>
                 <CloseIcon color='error' />
@@ -512,6 +524,9 @@ export default function CompetitionPage() {
           <Box sx={{ overflow: 'auto', maxHeight: 600 }}>
             <h4>ลิงค์</h4>
             <Input name="linkDetail" required value={linkDetail} onChange={(e) => setLinkDetail(e.target.value)} />
+
+            <h4>ข้อความที่จะแสดง</h4>
+            <Input name="textLink" required value={textLink} onChange={(e) => setTextLink(e.target.value)} />
           </Box>
           <Box sx={{ textAlign: "end" }}>
             <Button

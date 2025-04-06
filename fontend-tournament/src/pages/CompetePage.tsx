@@ -7,7 +7,7 @@ import NavigateCustom from '../components/NavigateCustom';
 import { formatDate, convertToBuddhistYear, convertToGregorianYear } from '../components/Reuse';
 import { createAndUpdateRegistrationCompete, getRegistration } from '../store/features/registrationSlice';
 import { getTeams } from '../store/features/teamSlice';
-import { createAndUpdateCompete, getCompete, removeCompete, statusHideCompete, statusHideCompetes } from '../store/features/competeSlice';
+import { createAndUpdateCompete, createAndUpdateCompetes, getCompete, removeCompete, statusHideCompete, statusHideCompetes } from '../store/features/competeSlice';
 import { useAppSelector, useAppDispatch } from '../store/store';
 import EditIcon from '@mui/icons-material/Edit';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -90,6 +90,33 @@ export default function CompetePage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setCurrentPage(value);
   };
+  const [openAddModals, setOpenAddModals] = useState(false);
+
+  const [nameAndLevelsCount, setNameAndLevelsCount] = useState('');
+  const [nameAndLevels, setNameAndLevels] = useState<any[]>([]);
+
+  const handleAddNameAndLevels = () => {
+    const newNameAndLevelsCount = Number(nameAndLevelsCount);
+    if (newNameAndLevelsCount > nameAndLevels.length) {
+      const newNameAndLevels = Array.from({ length: newNameAndLevelsCount - nameAndLevels.length }, (_,index:number) => ({
+        id: index,
+        name: '',
+        listLevel: []
+      }));
+      setNameAndLevels([...nameAndLevels, ...newNameAndLevels]);
+    } else if (newNameAndLevelsCount < nameAndLevels.length) {
+      setNameAndLevels(nameAndLevels.slice(0, newNameAndLevelsCount));
+    }
+  };
+
+  const handleNameAndLevelChange = (index: number, field: 'name' | 'listLevel', value: any) => {
+    const updatedNameAndLevels = [...nameAndLevels];
+    updatedNameAndLevels[index] = {
+      ...updatedNameAndLevels[index],
+      [field]: value
+    };
+    setNameAndLevels(updatedNameAndLevels);
+  };
 
   const handleOpenModal = (id?: number) => {
     setOpenAddAndUpdateModal(true);
@@ -124,6 +151,20 @@ export default function CompetePage() {
     setEndDate("")
     setListLevels([])
     setCompetitionListId(0)
+  };
+  const handleOpenModals = () => {
+    setOpenAddModals(true);
+  };
+
+  const handleCloseModals = () => {
+    setOpenAddModals(false);
+    setId(0)
+    setName("")
+    setEndDate("")
+    setListLevels([])
+    setCompetitionListId(0)
+    setNameAndLevelsCount('')
+    setNameAndLevels([])
   };
   const handleOpenDetailsModal = (id: number) => {
     const detail = CompetitionList && CompetitionList.find(c => c.id === id);
@@ -233,7 +274,24 @@ export default function CompetePage() {
       alert.alertCustom(2, "เกิดข้อผิดพลาด!");
     }
   };
+  const cAUCompetes = async () => {
+    if (startDate.trim() === "" || endDate.trim() === "") {
+      alert.alertCustom(2, 'กรุณาป้อนข้อมูลให้ครบ');
+      return;
+    }
+    const item = await dispatch(createAndUpdateCompetes({ id, nameAndLevels, startDate, endDate, competitionListId }));
+    if (item.payload !== "" && item.payload !== undefined) {
+      alert.alertCustom(1, id === 0 ? "สร้างรายการแข่งขันสำเร็จ" : "แก้ไขรายการแข่งขันสำเร็จ");
 
+      setTimeout(async () => {
+        await dispatch(getCompete());
+      }, 900);
+
+      handleCloseModals();
+    } else {
+      alert.alertCustom(2, "เกิดข้อผิดพลาด!");
+    }
+  };
   const removeCompeteById = async (id: number) => {
     Swal.fire({
       title: "คุณต้องการลบใช่ไหม",
@@ -381,6 +439,17 @@ export default function CompetePage() {
           {user && user?.role === "Admin" && (
             <Grid item xs={12} md={2.5}>
               <FormControl >
+                <h4 style={{ textAlign: "center" }}>สร้างหลายรายการแข่งขัน</h4>
+                <IconButton onClick={handleOpenModals}>
+                  <AddCircleOutlineIcon color='success' />
+                </IconButton>
+              </FormControl>
+            </Grid>
+          )}
+
+          {user && user?.role === "Admin" && (
+            <Grid item xs={12} md={2.5}>
+              <FormControl >
                 <h4 style={{ textAlign: "center" }}>สร้างรายการแข่งขัน</h4>
                 <IconButton onClick={() => handleOpenModal()}>
                   <AddCircleOutlineIcon color='success' />
@@ -507,8 +576,8 @@ export default function CompetePage() {
                             }}
                           >
                             <Option value={0}>ทีมของฉัน</Option>
-                            {teamByUser.filter((item: any) =>
-                              Compete.listLevels.some((l: any) => l.levelId === item.levelId)
+                            {teamByUser && teamByUser.filter((item: any) =>
+                              Compete.listLevelCompetes && Compete.listLevelCompetes.some((l: any) => l.levelId === item.levelId)
                             ).map((team: any) => {
                               const isRegistered = registrationCompetes && registrationCompetes.some(
                                 (reg: any) => reg.CompeteId === Compete.id && reg.teamId === team.id
@@ -547,192 +616,323 @@ export default function CompetePage() {
             sx={{ marginTop: 2, alignItems: "center" }}
           />
         }
+      </Box>
 
-        <Modal open={openAddAndUpdateModal} onClose={handleCloseModal}>
-          <ModalDialog sx={{
-            width: { xs: '100%', sm: 600 }, // กว้าง 600 เมื่อหน้าจอขนาดกลางขึ้นไป
-            maxWidth: '90%', // จำกัดความกว้างสูงสุดที่ 90% ของหน้าจอ
-          }}>
-            <ModalClose />
-            <Box sx={{ overflow: 'auto', maxHeight: 600 }}>
+      <Modal open={openAddAndUpdateModal} onClose={handleCloseModal}>
+        <ModalDialog sx={{
+          width: { xs: '100%', sm: 600 }, // กว้าง 600 เมื่อหน้าจอขนาดกลางขึ้นไป
+          maxWidth: '90%', // จำกัดความกว้างสูงสุดที่ 90% ของหน้าจอ
+        }}>
+          <ModalClose />
+          <Box sx={{ overflow: 'auto', maxHeight: 600 }}>
+            <Box>
               <Box>
-                <Box>
-                  <h4>เลือกรายการแข่งขัน</h4>
-                  <Select
-                    value={competitionListId}
-                    onChange={handleCompetitionListIdChange}
-                    required
-                    slotProps={{
-                      listbox: {
-                        component: 'div',
-                        sx: {
-                          maxHeight: 150,
-                          overflow: 'auto',
-                          '--List-padding': '0px',
-                          '--ListItem-radius': '0px',
-                        },
-                      },
-                    }}
-                  >
-                    {CompetitionList && CompetitionList.map(c => (
-                      <Option key={c.id} value={c.id}>
-                        [{new Date(c.dateTimeYear).getFullYear() + 543}] {Competitions.find((x: any) => x.id === c.competitionId)?.name}
-                      </Option>
-                    ))}
-                  </Select>
-                </Box>
-                <h3></h3>
-                <h4>ชื่อรายการแข่งขัน</h4>
-                <Input name="name" fullWidth required value={name} onChange={(e) => setName(e.target.value)} />
-
-                <h4 style={{ marginTop: 5 }}>ระดับรายการแข่งขัน</h4>
+                <h4>เลือกรายการแข่งขัน</h4>
                 <Select
-                  multiple
-                  renderValue={(selected) => (
-                    <Box sx={{ display: 'flex', gap: '0.25rem' }}>
-                      {selected.map((selectedOption, index) => (
-                        <Chip key={index} variant="soft" color="primary">
-                          {selectedOption.label}
-                        </Chip>
-                      ))}
-                    </Box>
-                  )}
-                  sx={{
-                    minWidth: '15rem',
-                  }}
+                  value={competitionListId}
+                  onChange={handleCompetitionListIdChange}
+                  required
                   slotProps={{
                     listbox: {
                       component: 'div',
                       sx: {
-                        maxHeight: 240,
+                        maxHeight: 150,
                         overflow: 'auto',
                         '--List-padding': '0px',
                         '--ListItem-radius': '0px',
                       },
                     },
                   }}
-
-                  onChange={handleLevelsChange}
-                  value={listLevels}
                 >
-                  {levels && levels.map((l) => (
-                    <Option key={l.id} value={l.id}>
-                      {l.name}
-                    </Option>
-                  ))}
-                </Select>
-                <h4 style={{ marginTop: 5 }}>เวลาเริ่มการแข่งขัน</h4>
-                <Input type="date" slotProps={{
-                  input: {
-                    min: convertToBuddhistYear(new Date().toISOString().split('T')[0]),
-                  },
-                }} name="startDate" required value={convertToBuddhistYear(startDate)} onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === '') {
-                    setStartDate('');
-                    return;
-                  }
-                  const newYear = convertToGregorianYear(e.target.value)
-                  setStartDate(newYear)
-                }} />
-                <h4 style={{ marginTop: 5 }}>เวลาสิ้นสุดการแข่งขัน</h4>
-                <Input type="date" slotProps={{
-                  input: {
-                    min: startDate ? convertToBuddhistYear(new Date(new Date(startDate).getTime() + 24 * 60 * 60 * 1000)
-                      .toISOString()
-                      .split('T')[0])
-                      : convertToBuddhistYear(new Date().toISOString().split('T')[0]),
-                  },
-                }} name="endDate" required disabled={!startDate} value={convertToBuddhistYear(endDate)} onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === '') {
-                    setEndDate('');
-                    return;
-                  }
-                  const newYear = convertToGregorianYear(e.target.value)
-
-                  setEndDate(newYear)
-                }} />
-              </Box>
-              <Box sx={{ textAlign: "end" }}>
-                <Button
-                  variant="solid"
-                  color="primary"
-                  sx={{ mt: 2 }}
-                  onClick={cAUCompete}
-                >
-                  ยืนยัน
-                </Button>
-              </Box>
-            </Box>
-          </ModalDialog>
-        </Modal>
-
-        <Modal open={openHideOrNotHideModal} onClose={handleCloseHideOrNotHideModal}>
-          <ModalDialog sx={{
-            width: { xs: '100%', sm: 600 }, // กว้าง 600 เมื่อหน้าจอขนาดกลางขึ้นไป
-            maxWidth: '90%', // จำกัดความกว้างสูงสุดที่ 90% ของหน้าจอ
-          }}>
-            <ModalClose />
-            <Box sx={{ overflow: 'auto', maxHeight: 600 }}>
-              <Box>
-                <h4>ปีที่จะซ่อน/ยกเลิกซ่อน</h4>
-                <Select
-                  value={year}
-                  onChange={handleYearChange}
-                  placeholder="กรุณาเลือกปี"
-                  sx={{ mb: 2 }} // เพิ่มระยะห่าง
-                >
-                  {years.map((yearValue) => (
-                    <Option key={yearValue} value={yearValue}>
-                      {yearValue}
+                  {CompetitionList && CompetitionList.map(c => (
+                    <Option key={c.id} value={c.id}>
+                      [{new Date(c.dateTimeYear).getFullYear() + 543}] {Competitions.find((x: any) => x.id === c.competitionId)?.name}
                     </Option>
                   ))}
                 </Select>
               </Box>
-              <Box sx={{ textAlign: "end" }}>
-                <Button
-                  variant="solid"
-                  color="primary"
-                  sx={{ mt: 2 }}
-                  onClick={hideCompeteByYear}
-                >
-                  ยืนยัน
-                </Button>
-              </Box>
-            </Box>
-          </ModalDialog>
-        </Modal>
+              <h3></h3>
+              <h4>ชื่อรายการแข่งขัน</h4>
+              <Input name="name" fullWidth required value={name} onChange={(e) => setName(e.target.value)} />
 
-        <Modal open={openDetailsModal} onClose={handleCloseDetailsModal}>
-          <ModalDialog sx={{
-            width: { xs: '100%', sm: 600 }, // กว้าง 600 เมื่อหน้าจอขนาดกลางขึ้นไป
-            maxWidth: '90%', // จำกัดความกว้างสูงสุดที่ 90% ของหน้าจอ
-          }}>
-            <ModalClose />
-            <Box sx={{ overflow: 'auto', maxHeight: 600 }}>
-              {details && details.map((x, index) => (
-                <Box
-                  key={index}
-                  sx={{
-                    border: '1px solid #ccc',
-                    borderRadius: '4px',
-                    padding: 2,
-                    marginBottom: 2,
-                    backgroundColor: '#f9f9f9'
-                  }}
-                >
-                  <h3 style={{ margin: 0 }}>{index + 1}. {x.name}</h3>
-                  {x.text.split('\n').map((line: string, lineIndex: number) => (
-                    <p key={lineIndex} style={{ margin: 0 }}>{line}</p>
-                  ))}
+              <h4 style={{ marginTop: 5 }}>ระดับรายการแข่งขัน</h4>
+              <Select
+                multiple
+                renderValue={(selected) => (
+                  <Box sx={{ display: 'flex', gap: '0.25rem' }}>
+                    {selected.map((selectedOption, index) => (
+                      <Chip key={index} variant="soft" color="primary">
+                        {selectedOption.label}
+                      </Chip>
+                    ))}
+                  </Box>
+                )}
+                sx={{
+                  minWidth: '15rem',
+                }}
+                slotProps={{
+                  listbox: {
+                    component: 'div',
+                    sx: {
+                      maxHeight: 240,
+                      overflow: 'auto',
+                      '--List-padding': '0px',
+                      '--ListItem-radius': '0px',
+                    },
+                  },
+                }}
+
+                onChange={handleLevelsChange}
+                value={listLevels}
+              >
+                {levels && levels.map((l) => (
+                  <Option key={l.id} value={l.id}>
+                    {l.name}
+                  </Option>
+                ))}
+              </Select>
+              <h4 style={{ marginTop: 5 }}>เวลาเริ่มการแข่งขัน</h4>
+              <Input type="date" slotProps={{
+                input: {
+                  min: convertToBuddhistYear(new Date().toISOString().split('T')[0]),
+                },
+              }} name="startDate" required value={convertToBuddhistYear(startDate)} onChange={(e) => {
+                const value = e.target.value;
+                if (value === '') {
+                  setStartDate('');
+                  return;
+                }
+                const newYear = convertToGregorianYear(e.target.value)
+                setStartDate(newYear)
+              }} />
+              <h4 style={{ marginTop: 5 }}>เวลาสิ้นสุดการแข่งขัน</h4>
+              <Input type="date" slotProps={{
+                input: {
+                  min: startDate ? convertToBuddhistYear(new Date(new Date(startDate).getTime() + 24 * 60 * 60 * 1000)
+                    .toISOString()
+                    .split('T')[0])
+                    : convertToBuddhistYear(new Date().toISOString().split('T')[0]),
+                },
+              }} name="endDate" required disabled={!startDate} value={convertToBuddhistYear(endDate)} onChange={(e) => {
+                const value = e.target.value;
+                if (value === '') {
+                  setEndDate('');
+                  return;
+                }
+                const newYear = convertToGregorianYear(e.target.value)
+
+                setEndDate(newYear)
+              }} />
+            </Box>
+            <Box sx={{ textAlign: "end" }}>
+              <Button
+                variant="solid"
+                color="primary"
+                sx={{ mt: 2 }}
+                onClick={cAUCompete}
+              >
+                ยืนยัน
+              </Button>
+            </Box>
+          </Box>
+        </ModalDialog>
+      </Modal>
+      <Modal open={openAddModals} onClose={handleCloseModals}>
+        <ModalDialog sx={{
+          width: { xs: '100%', sm: 600 }, // กว้าง 600 เมื่อหน้าจอขนาดกลางขึ้นไป
+          maxWidth: '90%', // จำกัดความกว้างสูงสุดที่ 90% ของหน้าจอ
+        }}>
+          <ModalClose />
+          <Box sx={{ overflow: 'auto', maxHeight: 600 }}>
+            <Box>
+            <h4>เลือกรายการแข่งขัน</h4>
+            <Select
+              value={competitionListId}
+              onChange={handleCompetitionListIdChange}
+              required
+              slotProps={{
+                listbox: {
+                  component: 'div',
+                  sx: {
+                    maxHeight: 150,
+                    overflow: 'auto',
+                    '--List-padding': '0px',
+                    '--ListItem-radius': '0px',
+                  },
+                },
+              }}
+            >
+              {CompetitionList && CompetitionList.map(c => (
+                <Option key={c.id} value={c.id}>
+                  [{new Date(c.dateTimeYear).getFullYear() + 543}] {Competitions.find((x: any) => x.id === c.competitionId)?.name}
+                </Option>
+              ))}
+            </Select>
+              <h4 style={{ marginTop: 5 }}>เวลาเริ่มการแข่งขัน</h4>
+              <Input type="date" slotProps={{
+                input: {
+                  min: convertToBuddhistYear(new Date().toISOString().split('T')[0]),
+                },
+              }} name="startDate" required value={convertToBuddhistYear(startDate)} onChange={(e) => {
+                const value = e.target.value;
+                if (value === '') {
+                  setStartDate('');
+                  return;
+                }
+                const newYear = convertToGregorianYear(e.target.value)
+                setStartDate(newYear)
+              }} />
+              <h4 style={{ marginTop: 5 }}>เวลาสิ้นสุดการแข่งขัน</h4>
+              <Input type="date" slotProps={{
+                input: {
+                  min: startDate ? convertToBuddhistYear(new Date(new Date(startDate).getTime() + 24 * 60 * 60 * 1000)
+                    .toISOString()
+                    .split('T')[0])
+                    : convertToBuddhistYear(new Date().toISOString().split('T')[0]),
+                },
+              }} name="endDate" required disabled={!startDate} value={convertToBuddhistYear(endDate)} onChange={(e) => {
+                const value = e.target.value;
+                if (value === '') {
+                  setEndDate('');
+                  return;
+                }
+                const newYear = convertToGregorianYear(e.target.value)
+
+                setEndDate(newYear)
+              }} />
+            </Box>
+
+            <Box>
+              <h4>
+                จำนวนที่ต้องการสร้าง
+              </h4>
+              <Input name="nameAndLevelsCount" type='number' required value={nameAndLevelsCount} onChange={(e) => setNameAndLevelsCount(e.target.value)} />
+
+              <Button variant="solid" sx={{ mt: 1 }} disabled={nameAndLevelsCount ? false : true} onClick={handleAddNameAndLevels}>
+                สร้างช่องกรอกข้อมูล
+              </Button>
+
+              {nameAndLevels.map((item, index) => (
+                <Box key={index} sx={{ mt: 2 }}>
+                  <h4>{`ชื่อที่ ${index + 1}`}</h4>
+                  <Input name="name" required value={item.name} onChange={(e) => handleNameAndLevelChange(index, 'name', e.target.value)} />
+
+                  <h4>{`ระดับของอันที่ ${index + 1}`}</h4>
+                  <Select
+                    multiple
+                    renderValue={(selected) => (
+                      <Box sx={{ display: 'flex', gap: '0.25rem' }}>
+                        {selected.map((selectedOption, index) => (
+                          <Chip key={index} variant="soft" color="primary">
+                            {selectedOption.label}
+                          </Chip>
+                        ))}
+                      </Box>
+                    )}
+                    sx={{
+                      minWidth: '15rem',
+                    }}
+                    slotProps={{
+                      listbox: {
+                        component: 'div',
+                        sx: {
+                          maxHeight: 240,
+                          overflow: 'auto',
+                          '--List-padding': '0px',
+                          '--ListItem-radius': '0px',
+                        },
+                      },
+                    }}
+                    value={item.listLevel}  // ใช้ item.listLevel แทน listLevels ถ้าเป็นค่าที่ต้องการ
+                    onChange={(_, newValue: number | number[] | null) => handleNameAndLevelChange(index, 'listLevel', newValue)}
+                  >
+                    {levels && levels.map((l) => (
+                      <Option key={l.id} value={l.id}>
+                        {l.name}
+                      </Option>
+                    ))}
+                  </Select>
+
                 </Box>
               ))}
-            </Box>
-          </ModalDialog>
-        </Modal>
 
-      </Box>
+              <Box sx={{ textAlign: "end" }}>
+                <Button
+                  variant="solid"
+                  color="primary"
+                  sx={{ mt: 2 }}
+                  onClick={cAUCompetes}
+                >
+                  ยืนยัน
+                </Button>
+              </Box>
+            </Box>
+          </Box>
+        </ModalDialog>
+      </Modal>
+      <Modal open={openHideOrNotHideModal} onClose={handleCloseHideOrNotHideModal}>
+        <ModalDialog sx={{
+          width: { xs: '100%', sm: 600 }, // กว้าง 600 เมื่อหน้าจอขนาดกลางขึ้นไป
+          maxWidth: '90%', // จำกัดความกว้างสูงสุดที่ 90% ของหน้าจอ
+        }}>
+          <ModalClose />
+          <Box sx={{ overflow: 'auto', maxHeight: 600 }}>
+            <Box>
+              <h4>ปีที่จะซ่อน/ยกเลิกซ่อน</h4>
+              <Select
+                value={year}
+                onChange={handleYearChange}
+                placeholder="กรุณาเลือกปี"
+                sx={{ mb: 2 }} // เพิ่มระยะห่าง
+              >
+                {years.map((yearValue) => (
+                  <Option key={yearValue} value={yearValue}>
+                    {yearValue}
+                  </Option>
+                ))}
+              </Select>
+            </Box>
+            <Box sx={{ textAlign: "end" }}>
+              <Button
+                variant="solid"
+                color="primary"
+                sx={{ mt: 2 }}
+                onClick={hideCompeteByYear}
+              >
+                ยืนยัน
+              </Button>
+            </Box>
+          </Box>
+        </ModalDialog>
+      </Modal>
+
+      <Modal open={openDetailsModal} onClose={handleCloseDetailsModal}>
+        <ModalDialog sx={{
+          width: { xs: '100%', sm: 600 }, // กว้าง 600 เมื่อหน้าจอขนาดกลางขึ้นไป
+          maxWidth: '90%', // จำกัดความกว้างสูงสุดที่ 90% ของหน้าจอ
+        }}>
+          <ModalClose />
+          <Box sx={{ overflow: 'auto', maxHeight: 600 }}>
+            {details && details.map((x, index) => (
+              <Box
+                key={index}
+                sx={{
+                  border: '1px solid #ccc',
+                  borderRadius: '4px',
+                  padding: 2,
+                  marginBottom: 2,
+                  backgroundColor: '#f9f9f9'
+                }}
+              >
+                <h3 style={{ margin: 0 }}>{index + 1}. {x.name}</h3>
+                {x.text.split('\n').map((line: string, lineIndex: number) => (
+                  <p key={lineIndex} style={{ margin: 0 }}>{line}</p>
+                ))}
+              </Box>
+            ))}
+          </Box>
+        </ModalDialog>
+      </Modal>
     </Container>
   )
 }

@@ -42,6 +42,7 @@ export const createAndUpdateAllDetail  = createAsyncThunk<AllDetail, FieldValues
       const AllDetail = await agent.AllDetail.creatAndUpdateAllDetail({
         Id : data.idlinkDetail,
         LinkDetail : data.linkDetail,
+        Text: data.textLink
       });
       
       return AllDetail;
@@ -96,6 +97,7 @@ export const createAndUpdateCompetitionList  = createAsyncThunk<CompetitionList,
       }
     }
   );
+  
 export const removeCompetition  = createAsyncThunk(
   "auth/fetchRemoveCompetition",
   async (id:number) => {

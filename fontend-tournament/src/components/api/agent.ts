@@ -176,6 +176,8 @@ const Competes = {
   getCompetes: () => requests.get("api/Competes/GetCompete"),
   creatAndUpdateCompete: (values: any) =>
     requests.post("api/Competes/CAUCompete", values),
+  creatAndUpdateCompetes: (values: any) =>
+    requests.post("api/Competes/CAUCompetes", values),
   statusHideCompete: (id: number) =>
     requests.get(`api/Competes/StatusHideCompete?id=${id}`),
   statusHideCompetes: (year: number) =>
@@ -196,7 +198,15 @@ const TextInImages = {
   creatAndUpdateTextInImage: (values: object) =>
     requests.postForm("api/TextInImages/CAUTextInImage", createFormData(values)),
   removeTextInImage: (id: number) =>
-    requests.delete(`api/TextInImages/RemoveTextInImageid=${id}`),
+    requests.delete(`api/TextInImages/RemoveTextInImage?id=${id}`),
+};
+
+const HomeImages = {
+  getHomeImages: () => requests.get("api/HomeImages/GetHomeImage"),
+  creatAndUpdateHomeImage: (values: object,images:any) =>
+    requests.postForm("api/HomeImages/CAUHomeImage", createFormData(values, images)),
+  removeHomeImage: (id: number) =>
+    requests.delete(`api/HomeImages/RemoveHomeImage?id=${id}`),
 };
 
 const agent = {
@@ -211,7 +221,8 @@ const agent = {
   AllDetail,
   Competes,
   SignerDetails,
-  TextInImages
+  TextInImages,
+  HomeImages
 };
 
 export default agent;

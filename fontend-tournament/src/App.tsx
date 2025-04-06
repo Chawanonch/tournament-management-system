@@ -28,6 +28,9 @@ import CompetitionTypePage from './pages/CompetitionTypePage'
 import CompeteDetailPage from './pages/CompeteDetailPage'
 import { getTextInImage } from './store/features/textInImageSlice'
 import { getSignerDetail } from './store/features/signerSlice'
+import { getHomeImage } from './store/features/homeImageSlice'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   const { token } = useAppSelector((state) => state.user); // สมมติว่ามีทัวร์นาเมนต์หลายรายการ
@@ -46,6 +49,7 @@ function App() {
     await dispatch(getCompete());
     await dispatch(getTextInImage());
     await dispatch(getSignerDetail());
+    await dispatch(getHomeImage());
   }
 
   const fetchToken = async () => {

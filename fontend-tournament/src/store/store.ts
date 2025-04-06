@@ -11,6 +11,7 @@ import competitionSlice from './features/competitionSlice'
 import competeSlice from './features/competeSlice'
 import textInImageSlice from './features/textInImageSlice'
 import signerSlice from './features/signerSlice'
+import homeImageSlice from './features/homeImageSlice'
 
 export const store = configureStore({
   reducer: {
@@ -25,6 +26,7 @@ export const store = configureStore({
     compete: competeSlice,
     textInImage: textInImageSlice,
     signer: signerSlice,
+    homeImage: homeImageSlice,
   },
 })
 

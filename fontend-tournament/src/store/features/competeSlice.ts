@@ -50,6 +50,34 @@ export const createAndUpdateCompete  = createAsyncThunk<Compete, FieldValues>(
     }
   }
 );
+export const createAndUpdateCompetes = createAsyncThunk<Compete, FieldValues>(
+  "auth/fetchCreateAndUpdateCompetes",
+  async (data) => {
+    try {
+
+      const Compete = await agent.Competes.creatAndUpdateCompetes({
+        ListName: data.nameAndLevels && data.nameAndLevels.map((item: any) => ({
+          Id: item.id,
+          Name: item.name,
+        })),
+        StartDate: data.startDate,
+        EndDate: data.endDate,
+        CompetitionListId: data.competitionListId,
+        listLevelCompetes: data.nameAndLevels && data.nameAndLevels.map((item: any) => ({
+          Id: item.id,
+          ListLevel: item.listLevel && item.listLevel.map((level: any) => ({
+            LevelId: level, 
+          })),
+        })),
+      });
+
+      console.log(Compete);
+      return Compete;
+    } catch (error) {
+      console.log("error", error);
+    }
+  }
+);
 
 export const statusHideCompete = createAsyncThunk(
   "auth/fetchStatusHideCompete",
@@ -125,6 +153,26 @@ export const competeSlice = createSlice({
           }
       })
       .addCase(createAndUpdateCompete.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message as string;
+      })
+
+      .addCase(createAndUpdateCompetes.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(createAndUpdateCompetes.fulfilled, (state, action) => {
+          state.loading = false;
+          const updated = action.payload;
+          const index = state.Competes.findIndex(x => x.id === updated?.id);
+        
+          if (index !== -1) {
+            state.Competes[index] = updated;
+          } else {
+            state.Competes.push(updated);
+          }
+      })
+      .addCase(createAndUpdateCompetes.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message as string;
       })

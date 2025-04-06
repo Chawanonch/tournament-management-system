@@ -21,8 +21,8 @@ export default function Navbar() {
 
     const navLinks = [
         { path: routes.home, text: 'หน้าหลัก' },
-        { path: routes.competition, text: 'รายการแข่งขัน' },
-        { path: routes.competitionType, text: 'การแข่งขัน' },
+        { path: routes.competition, text: 'รายละเอียดการแข่งขัน' },
+        { path: routes.competitionType, text: 'ลงทะเบียนการแข่งขัน' },
         { path: routes.certificate, text: 'รางวัล' },
         { path: routes.team, text: 'ทีม' },
     ];
