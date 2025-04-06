@@ -65,6 +65,9 @@ namespace ApiRovTournament
 
             CreateMap<ListSignerDetail, ListSignerDetailDto>();
             CreateMap<ListSignerDetailDto, ListSignerDetail>();
+
+            CreateMap<HomeImage, HomeImagesRequest>();
+            CreateMap<HomeImagesRequest, HomeImage>();
         }
     }
 }

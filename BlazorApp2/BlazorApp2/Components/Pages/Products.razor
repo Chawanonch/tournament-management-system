@@ -1,0 +1,126 @@
+﻿@page "/product"
+@using BlazorApp2.Models
+@using BlazorApp2.Services
+@inject ProductService ps
+
+<h3>Products</h3>
+
+<EditForm Model="@product" OnValidSubmit="Submit" FormName="ProductForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <InputText class="form-control" @bind-Value="product.Name" />
+        <ValidationMessage For="@(()=>product.Name)" />
+    </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <InputNumber class="form-control" @bind-Value="product.Price" />
+        <ValidationMessage For="@(()=>product.Price)" />
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount:</label>
+        <InputNumber class="form-control" @bind-Value="product.Amount" />
+        <ValidationMessage For="@(()=>product.Amount)" />
+    </div>
+
+    <div class="form-group">
+        <label for="cate">Category:</label>
+
+        <InputSelect class="form-control" @bind-Value="product.Category">
+            <option disabled selected>--Please Selected--</option>
+            @foreach (var cate in Enum.GetValues<SD.Category>())
+            {
+                <option value="@cate">@cate</option>
+            }
+            <ValidationMessage For="@(()=>product.Category)" />
+
+        </InputSelect>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in ps.ProductList.OrderByDescending(x => x.Id))
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.Price.ToString("0.00")</td>
+                <td>@p.Amount</td>
+                <td>@p.Category</td>
+                <td>
+                    <button class="btn btn-danger" @onclick="()=>Delete(p.Id)">Delete</button>
+                    <button class="btn btn-outline-warning" @onclick="()=>Edit(p.Id)">Edit</button>
+                </td>
+            </tr>
+        }
+        <tr>
+            <th>Max</th>
+            <th></th>
+            <th>@ps.ProductList.Max(x => x.Price).ToString("0.00")</th>
+            <th>@ps.ProductList.Max(x => x.Amount)</th>
+        </tr>
+        <tr>
+            <th>Min</th>
+            <th></th>
+            <th>@ps.ProductList.Min(x => x.Price).ToString("0.00")</th>
+            <th>@ps.ProductList.Min(x => x.Amount)</th>
+        </tr>
+        <tr>
+            <th>Average</th>
+            <th></th>
+            <th>@ps.ProductList.Average(x => x.Price).ToString("0.00")</th>
+            <th>@ps.ProductList.Average(x => x.Amount).ToString("0.00")</th>
+        </tr>
+    </tbody>
+</table>
+
+@code {
+    [SupplyParameterFromForm(Name = "ProductForm")]
+    private Product product { get; set; } = new();
+
+    public void Submit()
+    {
+        if (product.Id == 0)
+            ps.Add(product);
+        else
+            ps.Edit(product);
+
+        product = new();
+    }
+
+    public void Delete(int id)
+    {
+        ps.Delete(id);
+    }
+
+    public void Edit(int id)
+    {
+        var p = ps.FindbyId(id);
+
+        if (p != null)
+        {
+            product = new()
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Price = p.Price,
+                    Amount = p.Amount,
+                    Category = p.Category,
+                };
+        }
+    }
+}

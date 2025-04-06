@@ -1,0 +1,94 @@
+﻿@page "/theatre"
+@using BlazorApp4.Mode_s
+@using BlazorApp4.Services
+@inject TheatreService theas
+
+<h3>TheatrePage @theas.Theatres.Count()</h3>
+
+@if (theas == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    @foreach (var th in theas.Theatres)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Type</th>
+                    <th>Mouth</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+                    <th>Net</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in th)
+                {
+                    <tr>
+                        <td>@i.Id</td>
+                        <td>@i.Gender</td>
+                        <td>@i.Age</td>
+                        <td>@i.MemberType</td>
+                        <td>@i.Month</td>
+                        <td>@i.Price</td>
+                        <td>@i.Discount()</td>
+                        <td>@i.Net</td>
+                    </tr>
+                }
+            </tbody>
+            <p>Count Number Of Male @th.Count(x => x.Gender.Equals(SD.Sex.M))</p>
+            <p>Count Number Of Famale @th.Count(x => x.Gender.Equals(SD.Sex.F))</p>
+            <p>Count Number Of Member @th.Count(x => x.MemberType.Equals(SD.TypeM.member))</p>
+            <p>Count Number Of General @th.Count(x => x.MemberType.Equals(SD.TypeM.general))</p>
+            <p>Average of Age @th.Average(x => x.Age).ToString("0.00")</p>
+            <p>Max Mouth @theas.MaxminMouth(th).maxMouth.Key Value @theas.MaxminMouth(th).maxMouth.Value</p>
+            <p>Min Mouth @theas.MaxminMouth(th).minMouth.Key Value @theas.MaxminMouth(th).minMouth.Value</p>
+        </table>
+    }
+    <div class="w-100 p-3" style="background-color:#eee">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>MonthRange</th>
+                    <th>SumNet</th>
+                    <th>CountMember</th>
+                    <th>CountGeneral</th>
+                    <th>CountAll</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var r in theas.ReportByQuarter)
+                {
+                    <tr>
+                        <td>@r.MonthRange</td>
+                        <td>@r.SumNet</td>
+                        <td>@r.CountMember</td>
+                        <td>@r.CountGeneral</td>
+                        <td>@r.CountAll</td>
+                    </tr>
+                }
+                <tr>
+                    <td>SumAll</td>
+                    <td>@theas.ReportByQuarter.Sum(x => x.SumNet)</td>
+                    <td>@theas.ReportByQuarter.Sum(x=>x.CountMember)</td>
+                    <td>@theas.ReportByQuarter.Sum(x => x.CountGeneral)</td>
+                    <td>@theas.ReportByQuarter.Sum(x => x.CountAll)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+
+@code {
+    private int RoomNo;
+    protected override void OnInitialized()
+    {
+        RoomNo = 0;
+    }
+}

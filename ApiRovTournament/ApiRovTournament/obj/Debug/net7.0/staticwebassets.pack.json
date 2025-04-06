@@ -25,8 +25,32 @@
       "PackagePath": "staticwebassets\\THSarabunNew.ttf"
     },
     {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\ajax-loader-BcnMEykj.gif",
+      "PackagePath": "staticwebassets\\assets\\ajax-loader-BcnMEykj.gif"
+    },
+    {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\html2canvas.esm-CBrSDip1.js",
       "PackagePath": "staticwebassets\\assets\\html2canvas.esm-CBrSDip1.js"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index--f5BK4gF.js",
+      "PackagePath": "staticwebassets\\assets\\index--f5BK4gF.js"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index-BtPs0Lqz.js",
+      "PackagePath": "staticwebassets\\assets\\index-BtPs0Lqz.js"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index-CHT9s4ef.js",
+      "PackagePath": "staticwebassets\\assets\\index-CHT9s4ef.js"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index-CJj2c7sl.js",
+      "PackagePath": "staticwebassets\\assets\\index-CJj2c7sl.js"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index-CswZnRcQ.css",
+      "PackagePath": "staticwebassets\\assets\\index-CswZnRcQ.css"
     },
     {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index-CvhduR6b.css",
@@ -37,12 +61,40 @@
       "PackagePath": "staticwebassets\\assets\\index-CyIpvU9O.js"
     },
     {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index-D6EbPacu.js",
+      "PackagePath": "staticwebassets\\assets\\index-D6EbPacu.js"
+    },
+    {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index.es-BNhZiWcZ.js",
       "PackagePath": "staticwebassets\\assets\\index.es-BNhZiWcZ.js"
     },
     {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index.es-BUpMNglG.js",
+      "PackagePath": "staticwebassets\\assets\\index.es-BUpMNglG.js"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index.es-BlZzoJJr.js",
+      "PackagePath": "staticwebassets\\assets\\index.es-BlZzoJJr.js"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index.es-CYLVqQMu.js",
+      "PackagePath": "staticwebassets\\assets\\index.es-CYLVqQMu.js"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index.es-D3gxjwiE.js",
+      "PackagePath": "staticwebassets\\assets\\index.es-D3gxjwiE.js"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\index.es-uDoJ3Ab8.js",
+      "PackagePath": "staticwebassets\\assets\\index.es-uDoJ3Ab8.js"
+    },
+    {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\purify.es-DGIRlouP.js",
       "PackagePath": "staticwebassets\\assets\\purify.es-DGIRlouP.js"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\assets\\slick-BlzDm7g2.svg",
+      "PackagePath": "staticwebassets\\assets\\slick-BlzDm7g2.svg"
     },
     {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\bg\\bg1.jpg",
@@ -141,16 +193,88 @@
       "PackagePath": "staticwebassets\\images\\2aadf551-d4b2-4b73-a204-7f7708213abc.png"
     },
     {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\2deee3a7-2341-45d1-94a9-116c5c54e88c.jpg",
+      "PackagePath": "staticwebassets\\images\\2deee3a7-2341-45d1-94a9-116c5c54e88c.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\4c746233-2a8a-434e-a832-f860e5dff24c.jpg",
+      "PackagePath": "staticwebassets\\images\\4c746233-2a8a-434e-a832-f860e5dff24c.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\5161fddc-9f2d-4e08-aefc-82abb6413e1f.jpg",
+      "PackagePath": "staticwebassets\\images\\5161fddc-9f2d-4e08-aefc-82abb6413e1f.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\5b389d9b-a5b6-4a67-9a90-6790249a78eb.jpg",
+      "PackagePath": "staticwebassets\\images\\5b389d9b-a5b6-4a67-9a90-6790249a78eb.jpg"
+    },
+    {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\6e468444-a607-4093-a5eb-74b0f24f1c3f.png",
       "PackagePath": "staticwebassets\\images\\6e468444-a607-4093-a5eb-74b0f24f1c3f.png"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\70d0b1c1-400d-4957-ac66-eb3c0762b0c7.jpg",
+      "PackagePath": "staticwebassets\\images\\70d0b1c1-400d-4957-ac66-eb3c0762b0c7.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\74ed3a0c-4145-4551-83d3-44684390cbb3.jpg",
+      "PackagePath": "staticwebassets\\images\\74ed3a0c-4145-4551-83d3-44684390cbb3.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\7f4ab9a5-466b-43f2-8dce-e776db5c60d5.jpg",
+      "PackagePath": "staticwebassets\\images\\7f4ab9a5-466b-43f2-8dce-e776db5c60d5.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\87c081e4-7797-49c2-a46f-53c62e8d921a.png",
+      "PackagePath": "staticwebassets\\images\\87c081e4-7797-49c2-a46f-53c62e8d921a.png"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\8d4b496e-204e-4216-8bc4-6b4204e2817b.jpg",
+      "PackagePath": "staticwebassets\\images\\8d4b496e-204e-4216-8bc4-6b4204e2817b.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\98809c0e-3677-4980-83bd-2de6fe25ccfe.jpg",
+      "PackagePath": "staticwebassets\\images\\98809c0e-3677-4980-83bd-2de6fe25ccfe.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\a825cea2-9ca9-493c-9591-b33074a1684f.png",
+      "PackagePath": "staticwebassets\\images\\a825cea2-9ca9-493c-9591-b33074a1684f.png"
     },
     {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\a99747e4-e7a9-4eb4-b49d-73476ef9deb1.jpg",
       "PackagePath": "staticwebassets\\images\\a99747e4-e7a9-4eb4-b49d-73476ef9deb1.jpg"
     },
     {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\ade70cf5-9afa-4f4b-bdc0-318b084241f1.jpg",
+      "PackagePath": "staticwebassets\\images\\ade70cf5-9afa-4f4b-bdc0-318b084241f1.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\b5f45e4e-2205-4a4a-a229-c02047590642.jpg",
+      "PackagePath": "staticwebassets\\images\\b5f45e4e-2205-4a4a-a229-c02047590642.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\c036cc8a-6684-4ae2-b3b8-042cb5183306.jpg",
+      "PackagePath": "staticwebassets\\images\\c036cc8a-6684-4ae2-b3b8-042cb5183306.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\c369d26f-6dc7-4783-94f5-f94cbad5d44d.jpg",
+      "PackagePath": "staticwebassets\\images\\c369d26f-6dc7-4783-94f5-f94cbad5d44d.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\c538f700-e268-477e-bf24-42ebb702af98.jpg",
+      "PackagePath": "staticwebassets\\images\\c538f700-e268-477e-bf24-42ebb702af98.jpg"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\c5d1bdc2-96bc-4969-b7b9-98c28a1cd9d6.jpg",
+      "PackagePath": "staticwebassets\\images\\c5d1bdc2-96bc-4969-b7b9-98c28a1cd9d6.jpg"
+    },
+    {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\d9f075fc-6253-4c42-bc9d-4fe9c702c252.png",
       "PackagePath": "staticwebassets\\images\\d9f075fc-6253-4c42-bc9d-4fe9c702c252.png"
+    },
+    {
+      "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\eaf2c8b4-24cc-4da4-98fc-858464fb797d.jpg",
+      "PackagePath": "staticwebassets\\images\\eaf2c8b4-24cc-4da4-98fc-858464fb797d.jpg"
     },
     {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\images\\fc7093f6-9cf2-4705-a274-f85843938b5b.png",
@@ -163,6 +287,10 @@
     {
       "Id": "D:\\NewCs67\\ApiRovTournament\\ApiRovTournament\\wwwroot\\kru.png",
       "PackagePath": "staticwebassets\\kru.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ApiRovTournament.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ApiRovTournament.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -1,0 +1,167 @@
+﻿@page "/food"
+@using BlazorApp3.Models
+@using BlazorApp3.Services
+@inject FoodService fs;
+@inject IJSRuntime JsRuntime;
+
+@foreach (var topping in Enum.GetValues<SD.Topping>())
+{
+    <div>
+        <input type="checkbox" checked="@food.Topping.Contains(topping)" value="@topping" @onchange="(e) => ToggleCategory(topping,e.Value)" />
+        <label>@topping</label>
+    </div>
+}
+
+<h3>Foods</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Cost</th>
+            <th>Cal</th>
+            <th>Topping</th>
+            <th>Cost Rate</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var f in fs.Foods)
+        {
+            <tr>
+                <td>@f.Id</td>
+                <td>@f.Name</td>
+                <td>@f.Type</td>
+                <td>@f.Cost.ToString("0.00")</td>
+                <td>@f.Cal.ToString("0.00")</td>
+                <td>
+                    @foreach (var topping in f.Topping)
+                    {
+                        <p>@topping</p>
+                    }
+                </td>
+                <td>@f.CostRate()</td>
+                <td>
+                    <button class="btn btn-danger" @onclick="()=>Delete(f.Id)">Delete</button>
+                    <button class="btn btn-success" @onclick="()=>Edit(f)">Edit</button>
+                </td>
+            </tr>
+        }
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Cost</th>
+            <th>Cal</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Max</td>
+            <td>@fs.Foods.Max(x => x.Cost).ToString("0.00")</td>
+            <td>@fs.Foods.Max(x => x.Cal).ToString("0.00")</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Min</td>
+            <td>@fs.Foods.Min(x => x.Cost).ToString("0.00")</td>
+            <td>@fs.Foods.Min(x => x.Cal).ToString("0.00")</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Average</td>
+            <td>@fs.Foods.Average(x => x.Cost).ToString("0.00")</td>
+            <td>@fs.Foods.Average(x => x.Cal).ToString("0.00")</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+@foreach (var type in fs.GroupByType())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Cost</th>
+                <th>Cal</th>
+                <th>Cost Rate</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var f in type)
+            {
+                <tr>
+                    <td>@f.Id</td>
+                    <td>@f.Name</td>
+                    <td>@f.Type</td>
+                    <td>@f.Cost.ToString("0.00")</td>
+                    <td>@f.Cal.ToString("0.00")</td>
+
+                    <td>@f.CostRate()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    [SupplyParameterFromForm(Name = "FoodForm")]
+    private Food food { get; set; } = new();
+
+    public void Submit()
+    {
+        if (food.Id == 0)
+            fs.Add(food);
+        else
+            fs.Edit(food);
+
+        food = new();
+    }
+
+    public async Task Delete(int id)
+    {
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure?");
+        if (confirmed)
+        {
+            fs.Delete(id);
+        }
+    }
+    public void Edit(Food food)
+    {
+        this.food = new()
+            {
+                Id = food.Id,
+                Name = food.Name,
+                Cost = food.Cost,
+                Cal = food.Cal,
+                Type = food.Type,
+                Topping = food.Topping,
+
+            };
+    }
+    private void ToggleCategory(SD.Topping topping, object? isChecked)
+    {
+        if (isChecked is bool checkValue)
+        {
+            if (checkValue)
+            {
+                if (!food.Topping.Contains(topping))
+                {
+                    food.Topping.Add(topping);
+                }
+            }
+            else
+            {
+                food.Topping.Remove(topping);
+            }
+        }
+    }
+}

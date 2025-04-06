@@ -34,6 +34,10 @@ namespace ApiRovTournament.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("AllDetails");
@@ -150,6 +154,45 @@ namespace ApiRovTournament.Migrations
                     b.HasIndex("CompetitionId");
 
                     b.ToTable("CompetitionLists");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.HomeImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HomeImages");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.HomeImages", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("HomeImageId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HomeImageId");
+
+                    b.ToTable("HomeImagess");
                 });
 
             modelBuilder.Entity("ApiRovTournament.Models.Level", b =>
@@ -659,6 +702,17 @@ namespace ApiRovTournament.Migrations
                     b.Navigation("Competition");
                 });
 
+            modelBuilder.Entity("ApiRovTournament.Models.HomeImages", b =>
+                {
+                    b.HasOne("ApiRovTournament.Models.HomeImage", "HomeImage")
+                        .WithMany("RoomImages")
+                        .HasForeignKey("HomeImageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HomeImage");
+                });
+
             modelBuilder.Entity("ApiRovTournament.Models.ListLevel", b =>
                 {
                     b.HasOne("ApiRovTournament.Models.Level", "Level")
@@ -868,6 +922,11 @@ namespace ApiRovTournament.Migrations
             modelBuilder.Entity("ApiRovTournament.Models.CompetitionList", b =>
                 {
                     b.Navigation("Details");
+                });
+
+            modelBuilder.Entity("ApiRovTournament.Models.HomeImage", b =>
+                {
+                    b.Navigation("RoomImages");
                 });
 
             modelBuilder.Entity("ApiRovTournament.Models.Team", b =>

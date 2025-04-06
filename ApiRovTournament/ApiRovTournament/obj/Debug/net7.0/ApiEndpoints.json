@@ -1,0 +1,1232 @@
+[
+  {
+    "ContainingType": "ApiRovTournament.Controllers.AllDetailsController",
+    "Method": "CAUAllDetail",
+    "RelativePath": "api/AllDetails/CAUAllDetail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "LinkDetail",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Text",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.AllDetailsController",
+    "Method": "GetAllDetails",
+    "RelativePath": "api/AllDetails/GetAllDetail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.AllDetailsController",
+    "Method": "GetByIdAllDetail",
+    "RelativePath": "api/AllDetails/GetByIdAllDetail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.AllDetailsController",
+    "Method": "RemoveAllDetail",
+    "RelativePath": "api/AllDetails/RemoveAllDetail",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.AuthenController",
+    "Method": "GetRoles",
+    "RelativePath": "api/Authen/GetRoles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.AuthenController",
+    "Method": "GetUserDetail",
+    "RelativePath": "api/Authen/GetUserDetail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.AuthenController",
+    "Method": "GetUsers",
+    "RelativePath": "api/Authen/GetUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.AuthenController",
+    "Method": "IsTokenExpired",
+    "RelativePath": "api/Authen/IsTokenExpired",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.AuthenController",
+    "Method": "Login",
+    "RelativePath": "api/Authen/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiRovTournament.Dtos.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.AuthenController",
+    "Method": "Register",
+    "RelativePath": "api/Authen/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiRovTournament.Dtos.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.AuthenController",
+    "Method": "RemoveUser",
+    "RelativePath": "api/Authen/RemoveUser",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CertificatesController",
+    "Method": "CAUCertificate",
+    "RelativePath": "api/Certificates/CAUCertificate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiRovTournament.Dtos.ListCertificateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CertificatesController",
+    "Method": "CAUCertificateONE",
+    "RelativePath": "api/Certificates/CAUCertificateONE",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiRovTournament.Dtos.CertificateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CertificatesController",
+    "Method": "GetByIdCertificate",
+    "RelativePath": "api/Certificates/GetByIdCertificate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CertificatesController",
+    "Method": "GetCertificates",
+    "RelativePath": "api/Certificates/GetCertificate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CertificatesController",
+    "Method": "RemoveCertificate",
+    "RelativePath": "api/Certificates/RemoveCertificate",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetesController",
+    "Method": "CAUCompete",
+    "RelativePath": "api/Competes/CAUCompete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiRovTournament.Dtos.CompeteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetesController",
+    "Method": "CAUCompetes",
+    "RelativePath": "api/Competes/CAUCompetes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiRovTournament.Dtos.ListCompeteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetesController",
+    "Method": "GetByIdCompete",
+    "RelativePath": "api/Competes/GetByIdCompete",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetesController",
+    "Method": "GetCompetes",
+    "RelativePath": "api/Competes/GetCompete",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetesController",
+    "Method": "RemoveCompete",
+    "RelativePath": "api/Competes/RemoveCompete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetesController",
+    "Method": "StatusHideCompete",
+    "RelativePath": "api/Competes/StatusHideCompete",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetesController",
+    "Method": "StatusHideCompetes",
+    "RelativePath": "api/Competes/StatusHideCompetes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetitionsController",
+    "Method": "CAUCompetition",
+    "RelativePath": "api/Competitions/CAUCompetition",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetitionsController",
+    "Method": "CAUCompetitionList",
+    "RelativePath": "api/Competitions/CAUCompetitionList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiRovTournament.Dtos.CompetitionListDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetitionsController",
+    "Method": "GetByIdCompetition",
+    "RelativePath": "api/Competitions/GetByIdCompetition",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetitionsController",
+    "Method": "GetCompetitions",
+    "RelativePath": "api/Competitions/GetCompetition",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetitionsController",
+    "Method": "GetCompetitionLists",
+    "RelativePath": "api/Competitions/GetCompetitionList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetitionsController",
+    "Method": "RemoveCompetition",
+    "RelativePath": "api/Competitions/RemoveCompetition",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.CompetitionsController",
+    "Method": "RemoveCompetitionList",
+    "RelativePath": "api/Competitions/RemoveCompetitionList",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.HomeImagesController",
+    "Method": "CAUHomeImage",
+    "RelativePath": "api/HomeImages/CAUHomeImage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Text",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "images",
+        "Type": "Microsoft.AspNetCore.Http.IFormFileCollection",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.HomeImagesController",
+    "Method": "GetByIdHomeImage",
+    "RelativePath": "api/HomeImages/GetByIdHomeImage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.HomeImagesController",
+    "Method": "GetHomeImages",
+    "RelativePath": "api/HomeImages/GetHomeImage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.HomeImagesController",
+    "Method": "RemoveHomeImage",
+    "RelativePath": "api/HomeImages/RemoveHomeImage",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.LevelsController",
+    "Method": "CAULevel",
+    "RelativePath": "api/Levels/CAULevel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.LevelsController",
+    "Method": "GetByIdLevel",
+    "RelativePath": "api/Levels/GetByIdLevel",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.LevelsController",
+    "Method": "GetLevels",
+    "RelativePath": "api/Levels/GetLevel",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.LevelsController",
+    "Method": "RemoveLevel",
+    "RelativePath": "api/Levels/RemoveLevel",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.MatchsController",
+    "Method": "GetByIdMatch",
+    "RelativePath": "api/Matchs/GetByIdMatch",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.MatchsController",
+    "Method": "GetMatchs",
+    "RelativePath": "api/Matchs/GetMatch",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.MatchsController",
+    "Method": "RandomMatchs",
+    "RelativePath": "api/Matchs/RandomMatch",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiRovTournament.Dtos.RandomMatchDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.MatchsController",
+    "Method": "RemoveMatch",
+    "RelativePath": "api/Matchs/RemoveMatch",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.MatchsController",
+    "Method": "ResetMatchesForRound",
+    "RelativePath": "api/Matchs/ResetMatchesForRound",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiRovTournament.Dtos.ResetMatchForRoundDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.MatchsController",
+    "Method": "ResetTeamsAndDeleteMatches",
+    "RelativePath": "api/Matchs/ResetTeamsAndDeleteMatches",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.MatchsController",
+    "Method": "UpdateMatch",
+    "RelativePath": "api/Matchs/UpdateMatch",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiRovTournament.Dtos.UpdateMatchDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "CancelCheckInAllRegistrationCompetes",
+    "RelativePath": "api/Registrations/CancelCheckInAllRegistrationCompetes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "CancelCheckInAllRegistrations",
+    "RelativePath": "api/Registrations/CancelCheckInAllRegistrations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "CheckInAllRegistrationCompetes",
+    "RelativePath": "api/Registrations/CheckInAllRegistrationCompetes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "CheckInAllRegistrations",
+    "RelativePath": "api/Registrations/CheckInAllRegistrations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "CheckInRegistrationCompetes",
+    "RelativePath": "api/Registrations/CheckInRegistrationCompetes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "CheckInRegistrations",
+    "RelativePath": "api/Registrations/CheckInRegistrations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "GetByIdRegistration",
+    "RelativePath": "api/Registrations/GetByIdRegistration",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "GetByIdRegistrationCompete",
+    "RelativePath": "api/Registrations/GetByIdRegistrationCompete",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "GetRegistrationCompetes",
+    "RelativePath": "api/Registrations/GetRegistrationCompetes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "GetRegistrations",
+    "RelativePath": "api/Registrations/GetRegistrations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "Registration",
+    "RelativePath": "api/Registrations/Registration",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiRovTournament.Dtos.RegistrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "RegistrationCompete",
+    "RelativePath": "api/Registrations/RegistrationCompete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiRovTournament.Dtos.RegistrationCompeteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "RemoveRegistration",
+    "RelativePath": "api/Registrations/RemoveRegistration",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.RegistrationsController",
+    "Method": "RemoveRegistrationCompete",
+    "RelativePath": "api/Registrations/RemoveRegistrationCompete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.SignerDetailsController",
+    "Method": "CAUSignerDetail",
+    "RelativePath": "api/SignerDetails/CAUSignerDetail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "FullName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Position",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SignatureImageUrl",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.SignerDetailsController",
+    "Method": "GetByIdSignerDetail",
+    "RelativePath": "api/SignerDetails/GetByIdSignerDetail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.SignerDetailsController",
+    "Method": "GetSignerDetails",
+    "RelativePath": "api/SignerDetails/GetSignerDetail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.SignerDetailsController",
+    "Method": "RemoveSignerDetail",
+    "RelativePath": "api/SignerDetails/RemoveSignerDetail",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TeamsController",
+    "Method": "CAUTeam",
+    "RelativePath": "api/Teams/CAUTeam",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiRovTournament.Dtos.TeamRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TeamsController",
+    "Method": "GetByIdTeam",
+    "RelativePath": "api/Teams/GetByIdTeam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TeamsController",
+    "Method": "GetTeams",
+    "RelativePath": "api/Teams/GetTeam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TeamsController",
+    "Method": "GetTeamByUser",
+    "RelativePath": "api/Teams/GetTeamByUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TeamsController",
+    "Method": "RemoveTeam",
+    "RelativePath": "api/Teams/RemoveTeam",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TextInImagesController",
+    "Method": "CAUTextInImage",
+    "RelativePath": "api/TextInImages/CAUTextInImage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Text",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TextInImagesController",
+    "Method": "GetByIdTextInImage",
+    "RelativePath": "api/TextInImages/GetByIdTextInImage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TextInImagesController",
+    "Method": "GetTextInImages",
+    "RelativePath": "api/TextInImages/GetTextInImage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TextInImagesController",
+    "Method": "RemoveTextInImage",
+    "RelativePath": "api/TextInImages/RemoveTextInImage",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TournamentsController",
+    "Method": "CAUTournament",
+    "RelativePath": "api/Tournaments/CAUTournament",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StartDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "EndDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateCreated",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ListLevels",
+        "Type": "System.Collections.Generic.List\u00601[[ApiRovTournament.Dtos.ListLevelDto, ApiRovTournament, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsHide",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "GameImageUrl",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Prizes",
+        "Type": "System.Collections.Generic.List\u00601[[ApiRovTournament.Dtos.ListPrizeDto, ApiRovTournament, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TournamentsController",
+    "Method": "GetByIdTournament",
+    "RelativePath": "api/Tournaments/GetByIdTournament",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TournamentsController",
+    "Method": "GetTournaments",
+    "RelativePath": "api/Tournaments/GetTournament",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TournamentsController",
+    "Method": "RemoveTournament",
+    "RelativePath": "api/Tournaments/RemoveTournament",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TournamentsController",
+    "Method": "StatusHideTournament",
+    "RelativePath": "api/Tournaments/StatusHideTournament",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiRovTournament.Controllers.TournamentsController",
+    "Method": "StatusHideTournaments",
+    "RelativePath": "api/Tournaments/StatusHideTournaments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

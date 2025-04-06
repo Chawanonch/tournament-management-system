@@ -85,7 +85,8 @@ namespace ApiRovTournament.Data
         public DbSet<ListLevelCompete> ListLevelCompetes { get; set; }
         public DbSet<SignerDetail> SignerDetails { get; set; }
         public DbSet<ListSignerDetail> ListSignerDetails { get; set; }
-
+        public DbSet<HomeImage> HomeImages { get; set; }
+        public DbSet<HomeImages> HomeImagess { get; set; }
 
     }
 }

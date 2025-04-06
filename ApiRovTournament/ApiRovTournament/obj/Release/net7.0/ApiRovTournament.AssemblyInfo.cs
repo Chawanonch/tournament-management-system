@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiRovTournament")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53688f3f5c0532d9bb8d507fda81ab3ba5356ece")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5ae532475e194dff0db1dad056246f782a0367f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiRovTournament")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiRovTournament")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

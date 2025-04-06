@@ -86,6 +86,87 @@ namespace ApiRovTournament.Services
 
             return result;
         }
+        public async Task<object> CAUCompetes(ListCompeteRequest request)
+        {
+            var resultList = new List<Compete>(); // List to store all successfully added competes
+
+            // Fetch the competition list (checks if it exists)
+            var competitionLists = await _context.CompetitionLists.AsNoTracking().FirstOrDefaultAsync(x => x.Id == request.CompetitionListId);
+            if (competitionLists == null) return "Error: Competition List not found!"; // Return error if not found
+
+            if (request.StartDate.Day == request.EndDate.Day)
+            {
+                return "Error: Day Start = End"; // Check for invalid date range
+            }
+
+            foreach (var competeRequest in request.ListName)
+            {
+                var result = new Compete
+                {
+                    CompetitionListId = request.CompetitionListId, // Assuming this is part of the request object
+                    Name = competeRequest.Name, // Set the name from ListNameDto
+                    StartDate = request.StartDate,
+                    EndDate = request.EndDate,
+                    DateCreated = DateTime.Now,
+                    IsHide = true,
+                };
+
+                await _context.Competes.AddAsync(result);
+                await _context.SaveChangesAsync();
+
+                if (request.ListLevelCompetes.Any())
+                {
+                    // Remove existing levels for this Compete (if any)
+                    var existingLevels = await _context.ListLevelCompetes.Where(x => x.CompeteId == result.Id).ToListAsync();
+                    if (existingLevels.Any())
+                    {
+                        _context.ListLevelCompetes.RemoveRange(existingLevels);
+                        await _context.SaveChangesAsync();
+                    }
+
+                    var listLevel = new List<ListLevelCompete>(); // List to store levels for this compete
+
+                    // Process each ListLevelCompetesDto
+                    foreach (var levelsDTO in request.ListLevelCompetes)
+                    {
+                        // Ensure that levelsDTO corresponds to the current competeRequest (you may need to adjust this if the structure differs)
+                        if (levelsDTO.Id == competeRequest.Id)  // Assuming ListLevelCompetesDto has CompeteId or similar to link to the compete
+                        {
+                            // Process each levelDTO in the current ListLevelCompetesDto
+                            foreach (var levelDTO in levelsDTO.ListLevel)
+                            {
+                                var levelEntity = await _levelService.GetByIdLevel(levelDTO.LevelId);
+                                if (levelEntity == null)
+                                {
+                                    return "Error: Level not found!"; // Return error if level not found
+                                }
+
+                                var newListLevel = new ListLevelCompete
+                                {
+                                    CompeteId = result.Id,
+                                    LevelId = levelDTO.LevelId
+                                };
+
+                                listLevel.Add(newListLevel); // Add level to the list
+                            }
+                        }
+                    }
+
+                    // Add the levels to the database and update the Compete
+                    result.ListLevelCompetes = listLevel;
+                    await _context.ListLevelCompetes.AddRangeAsync(listLevel);
+                    await _context.SaveChangesAsync();
+                }
+
+                // Add the result to the result list after processing it fully
+                resultList.Add(result);
+            }
+
+            return resultList; // Return the list of all added competes
+        }
+
+
+
         public async Task<object> StatusHideCompete(int id)
         {
             var compete = await _context.Competes.FirstOrDefaultAsync(x => x.Id == id);

@@ -36,6 +36,13 @@ namespace ApiRovTournament.Controllers
             if (result == null) return BadRequest(result);
             return Ok(result);
         }
+        [HttpPost("CAUCompetes"), Authorize]
+        public async Task<IActionResult> CAUCompetes([FromBody] ListCompeteRequest request)
+        {
+            var result = await _competeService.CAUCompetes(request);
+            if (result == null) return BadRequest(result);
+            return Ok(result);
+        }
 
         [HttpGet("StatusHideCompete"), Authorize]
         public async Task<IActionResult> StatusHideCompete(int id)

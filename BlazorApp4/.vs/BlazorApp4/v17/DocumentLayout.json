@@ -1,0 +1,181 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\NewCs67\\BlazorApp4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|d:\\newcs67\\blazorapp4\\blazorapp4\\components\\pages\\theatrepage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|solutionrelative:blazorapp4\\components\\pages\\theatrepage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|d:\\newcs67\\blazorapp4\\blazorapp4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|solutionrelative:blazorapp4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|d:\\newcs67\\blazorapp4\\blazorapp4\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|solutionrelative:blazorapp4\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|d:\\newcs67\\blazorapp4\\blazorapp4\\mode;s\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|solutionrelative:blazorapp4\\mode;s\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|d:\\newcs67\\blazorapp4\\blazorapp4\\services\\itheatreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|solutionrelative:blazorapp4\\services\\itheatreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|d:\\newcs67\\blazorapp4\\blazorapp4\\services\\theatreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|solutionrelative:blazorapp4\\services\\theatreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|d:\\newcs67\\blazorapp4\\blazorapp4\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|solutionrelative:blazorapp4\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|d:\\newcs67\\blazorapp4\\blazorapp4\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|solutionrelative:blazorapp4\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|d:\\newcs67\\blazorapp4\\blazorapp4\\mode;s\\sd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7FCC23F-16CD-44B0-8BEC-60077238C523}|BlazorApp4\\BlazorApp4.csproj|solutionrelative:blazorapp4\\mode;s\\sd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 237,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Program.cs",
+              "RelativeDocumentMoniker": "BlazorApp4\\Program.cs",
+              "ToolTip": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Program.cs",
+              "RelativeToolTip": "BlazorApp4\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T05:00:52.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Weather.razor",
+              "DocumentMoniker": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Components\\Pages\\Weather.razor",
+              "RelativeDocumentMoniker": "BlazorApp4\\Components\\Pages\\Weather.razor",
+              "ToolTip": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Components\\Pages\\Weather.razor",
+              "RelativeToolTip": "BlazorApp4\\Components\\Pages\\Weather.razor",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAwCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-22T04:46:53.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "BlazorApp4\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "BlazorApp4\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-22T04:45:51.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "BlazorApp4\\Components\\_Imports.razor",
+              "ToolTip": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Components\\_Imports.razor",
+              "RelativeToolTip": "BlazorApp4\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-22T04:45:49.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TheatrePage.razor",
+              "DocumentMoniker": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Components\\Pages\\TheatrePage.razor",
+              "RelativeDocumentMoniker": "BlazorApp4\\Components\\Pages\\TheatrePage.razor",
+              "ToolTip": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Components\\Pages\\TheatrePage.razor",
+              "RelativeToolTip": "BlazorApp4\\Components\\Pages\\TheatrePage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-22T04:45:34.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TheatreService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Services\\TheatreService.cs",
+              "RelativeDocumentMoniker": "BlazorApp4\\Services\\TheatreService.cs",
+              "ToolTip": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Services\\TheatreService.cs",
+              "RelativeToolTip": "BlazorApp4\\Services\\TheatreService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAWwC4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T04:30:29.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ITheatreService.cs",
+              "DocumentMoniker": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Services\\ITheatreService.cs",
+              "RelativeDocumentMoniker": "BlazorApp4\\Services\\ITheatreService.cs",
+              "ToolTip": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Services\\ITheatreService.cs",
+              "RelativeToolTip": "BlazorApp4\\Services\\ITheatreService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T04:30:25.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SD.cs",
+              "DocumentMoniker": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Mode;s\\SD.cs",
+              "RelativeDocumentMoniker": "BlazorApp4\\Mode;s\\SD.cs",
+              "ToolTip": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Mode;s\\SD.cs",
+              "RelativeToolTip": "BlazorApp4\\Mode;s\\SD.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T04:25:04.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Mode;s\\Ticket.cs",
+              "RelativeDocumentMoniker": "BlazorApp4\\Mode;s\\Ticket.cs",
+              "ToolTip": "D:\\NewCs67\\BlazorApp4\\BlazorApp4\\Mode;s\\Ticket.cs",
+              "RelativeToolTip": "BlazorApp4\\Mode;s\\Ticket.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAApwBwAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T04:24:46.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

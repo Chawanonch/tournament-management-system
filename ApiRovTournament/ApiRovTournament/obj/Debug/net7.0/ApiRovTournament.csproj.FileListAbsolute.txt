@@ -84,3 +84,7 @@ D:\NewCs67\ApiRovTournament\ApiRovTournament\bin\Debug\net7.0\Swashbuckle.AspNet
 D:\NewCs67\ApiRovTournament\ApiRovTournament\bin\Debug\net7.0\ApiRovTournament.staticwebassets.runtime.json
 D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Debug\net7.0\ApiRovTournament.sourcelink.json
 D:\NewCs67\ApiRovTournament\ApiRovTournament\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\NewCs67\ApiRovTournament\ApiRovTournament\bin\Debug\net7.0\ApiRovTournament.staticwebassets.endpoints.json
+D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Debug\net7.0\staticwebassets.build.endpoints.json
+D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Debug\net7.0\staticwebassets\msbuild.ApiRovTournament.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\NewCs67\ApiRovTournament\ApiRovTournament\obj\Debug\net7.0\staticwebassets.upToDateCheck.txt
