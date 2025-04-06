@@ -52,13 +52,7 @@ namespace ApiRovTournament.Services
 
             var tournament = await GetByIdTournament(request?.Id);
 
-            var numberY = 543;
-
-            result.StartDate = result.StartDate.Date.AddYears(numberY);
-            result.EndDate = result.EndDate.Date.AddYears(numberY);
-
             result.DateCreated = DateTime.Now;
-            result.DateCreated = result.DateCreated.Date.AddYears(543);
 
             if (result.StartDate.Day == result.EndDate.Day) return "Error Day Start = End";
 
